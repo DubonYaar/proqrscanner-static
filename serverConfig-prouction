@@ -1,7 +1,7 @@
-
 {
     "showOnboarding":true,
     "subscription":{
+        "showTransparencyDialog": true,
         "title":"Tap subscribe to unlock all features",
         "bulletpoints":[
             "Unlimited QR Scans",
@@ -35,3 +35,4 @@
     ]
     }
 }
+
