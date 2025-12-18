@@ -1,0 +1,39 @@
+{
+    "showOnboarding":true,
+    "subscription":{
+        "showTransparencyDialog": true,
+        "title":"Tap Continue to unlock all features",
+        "bulletpoints":[
+            "Unlimited QR Scans",
+            "Generate QR Codes from many templates",
+            "Add Logo and Colors to QR codes"
+        ],
+        "mainButtonTitle":"Start Free Trial",
+        "mainButtonTitleNoTrial":"Continue",
+        "freeTrialEnabled": false,
+        "showFreeTrialToggle": true,
+        "selectedProgramIndex": 1,
+        "showUpsaleDialog": true,
+        "programs":
+         [
+            {
+                "withTrialId":"weekly.9.99.withTrial",
+                "withoutTrialId":"weekly.9.99",
+                "title": "Weekly",
+                "subtitle":"3 days free trial",
+                "subtitleNoTrial":"Per Week",
+                "isBestOffer" : false,
+               
+            },
+            {
+                "withTrialId":"yearly.59.99.withTrial",
+                "withoutTrialId":"yearly.59.99",
+                "title": "Yearly",
+                "subtitle":"per week",
+                "isBestOffer" : true,
+                "priceDevider":52.14
+            }
+            
+    ]
+    }
+}

@@ -1,0 +1,40 @@
+{
+    "showOnboarding":true,
+    "subscription":{
+        "showTransparencyDialog": true,
+        "title":"Нажмите, чтобы разблокировать все функции",
+        "bulletpoints":[
+            "Безлимитное сканирование QR",
+            "Создавайте QR-коды из множества шаблонов",
+            "Добавляйте логотип и цвета к QR-кодам"
+        ],
+        "mainButtonTitle":"Начать бесплатный период",
+        "mainButtonTitleNoTrial":"Продолжить",
+        "freeTrialEnabled": false,
+        "showFreeTrialToggle": true,
+        "selectedProgramIndex": 1,
+        "showUpsaleDialog": true,
+        "programs":
+         [
+            {
+                "withTrialId":"weekly.9.99.withTrial",
+                "withoutTrialId":"weekly.9.99",
+                "title": "Еженедельно",
+                "subtitle":"3 дня бесплатно",
+                "subtitleNoTrial":"В неделю",
+                "isBestOffer" : false
+               
+            },
+            {
+                "withTrialId":"yearly.59.99.withTrial",
+                "withoutTrialId":"yearly.59.99",
+                "title": "Ежегодно",
+                "subtitle":"в неделю",
+                "isBestOffer" : true,
+                "priceDevider":52.14
+            }
+            
+    ]
+    }
+}
+

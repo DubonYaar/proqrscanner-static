@@ -1,0 +1,37 @@
+{
+    "subscription":{
+        "showTransparencyDialog": true,
+        "title":"Підпишіться, щоб розблокувати всі функції",
+        "bulletpoints":[
+            "Безлімітне сканування QR",
+            "Створюйте QR-коди з багатьох шаблонів",
+            "Додавайте логотип та кольори до QR-кодів"
+        ],
+        "mainButtonTitle":"Підписатися",
+        "freeTrialEnabled": true,
+        "showFreeTrialToggle": false,
+        "selectedProgramIndex": 1,
+        "showUpsaleDialog": false,
+        "programs":
+         [
+            {
+                "withTrialId":"weekly.9.99.withTrial",
+                "withoutTrialId":"weekly.9.99",
+                "title": "Щотижня",
+                "subtitle":"3 дні безкоштовно",
+                "subtitleNoTrial":"",
+                "isBestOffer" : false
+            },
+            {
+                "withTrialId":"yearly.59.99.withTrial",
+                "withoutTrialId":"yearly.59.99",
+                "title": "Щорічно",
+                "subtitle":"на тиждень",
+                "subtitleNoTrial":"",
+                "isBestOffer" : true,
+                "priceDevider":null
+            }
+    ]
+    }
+}
+

@@ -1,0 +1,37 @@
+{
+    "subscription":{
+        "showTransparencyDialog": true,
+        "title":"Εγγραφείτε για να ξεκλειδώσετε όλες τις λειτουργίες",
+        "bulletpoints":[
+            "Απεριόριστες σαρώσεις QR",
+            "Δημιουργήστε κωδικούς QR από πολλά πρότυπα",
+            "Προσθέστε λογότυπο και χρώματα στους κωδικούς QR"
+        ],
+        "mainButtonTitle":"Εγγραφή",
+        "freeTrialEnabled": true,
+        "showFreeTrialToggle": false,
+        "selectedProgramIndex": 1,
+        "showUpsaleDialog": false,
+        "programs":
+         [
+            {
+                "withTrialId":"weekly.9.99.withTrial",
+                "withoutTrialId":"weekly.9.99",
+                "title": "Εβδομαδιαία",
+                "subtitle":"3 ημέρες δωρεάν δοκιμή",
+                "subtitleNoTrial":"",
+                "isBestOffer" : false
+            },
+            {
+                "withTrialId":"yearly.59.99.withTrial",
+                "withoutTrialId":"yearly.59.99",
+                "title": "Ετήσια",
+                "subtitle":"ανά εβδομάδα",
+                "subtitleNoTrial":"",
+                "isBestOffer" : true,
+                "priceDevider":null
+            }
+    ]
+    }
+}
+

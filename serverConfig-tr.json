@@ -1,0 +1,40 @@
+{
+    "showOnboarding":true,
+    "subscription":{
+        "showTransparencyDialog": true,
+        "title":"Tüm özellikleri açmak için dokunun",
+        "bulletpoints":[
+            "Sınırsız QR tarama",
+            "Birçok şablondan QR kodları oluşturun",
+            "QR kodlarına logo ve renk ekleyin"
+        ],
+        "mainButtonTitle":"Ücretsiz Denemeyi Başlat",
+        "mainButtonTitleNoTrial":"Devam Et",
+        "freeTrialEnabled": false,
+        "showFreeTrialToggle": true,
+        "selectedProgramIndex": 1,
+        "showUpsaleDialog": true,
+        "programs":
+         [
+            {
+                "withTrialId":"weekly.9.99.withTrial",
+                "withoutTrialId":"weekly.9.99",
+                "title": "Haftalık",
+                "subtitle":"3 gün ücretsiz deneme",
+                "subtitleNoTrial":"Haftalık",
+                "isBestOffer" : false
+               
+            },
+            {
+                "withTrialId":"yearly.59.99.withTrial",
+                "withoutTrialId":"yearly.59.99",
+                "title": "Yıllık",
+                "subtitle":"haftalık",
+                "isBestOffer" : true,
+                "priceDevider":52.14
+            }
+            
+    ]
+    }
+}
+

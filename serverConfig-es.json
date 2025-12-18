@@ -1,0 +1,40 @@
+{
+    "showOnboarding":true,
+    "subscription":{
+        "showTransparencyDialog": true,
+        "title":"Toca para desbloquear todas las funciones",
+        "bulletpoints":[
+            "Escaneos QR ilimitados",
+            "Genera códigos QR desde muchas plantillas",
+            "Añade logo y colores a los códigos QR"
+        ],
+        "mainButtonTitle":"Iniciar prueba gratuita",
+        "mainButtonTitleNoTrial":"Continuar",
+        "freeTrialEnabled": false,
+        "showFreeTrialToggle": true,
+        "selectedProgramIndex": 1,
+        "showUpsaleDialog": true,
+        "programs":
+         [
+            {
+                "withTrialId":"weekly.9.99.withTrial",
+                "withoutTrialId":"weekly.9.99",
+                "title": "Semanal",
+                "subtitle":"3 días de prueba gratis",
+                "subtitleNoTrial":"Por semana",
+                "isBestOffer" : false
+               
+            },
+            {
+                "withTrialId":"yearly.59.99.withTrial",
+                "withoutTrialId":"yearly.59.99",
+                "title": "Anual",
+                "subtitle":"por semana",
+                "isBestOffer" : true,
+                "priceDevider":52.14
+            }
+            
+    ]
+    }
+}
+

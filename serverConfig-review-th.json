@@ -1,0 +1,37 @@
+{
+    "subscription":{
+        "showTransparencyDialog": true,
+        "title":"สมัครสมาชิกเพื่อปลดล็อกฟีเจอร์ทั้งหมด",
+        "bulletpoints":[
+            "สแกน QR ไม่จำกัด",
+            "สร้างรหัส QR จากเทมเพลตหลากหลาย",
+            "เพิ่มโลโก้และสีให้รหัส QR"
+        ],
+        "mainButtonTitle":"สมัครสมาชิก",
+        "freeTrialEnabled": true,
+        "showFreeTrialToggle": false,
+        "selectedProgramIndex": 1,
+        "showUpsaleDialog": false,
+        "programs":
+         [
+            {
+                "withTrialId":"weekly.9.99.withTrial",
+                "withoutTrialId":"weekly.9.99",
+                "title": "รายสัปดาห์",
+                "subtitle":"ทดลองใช้ฟรี 3 วัน",
+                "subtitleNoTrial":"",
+                "isBestOffer" : false
+            },
+            {
+                "withTrialId":"yearly.59.99.withTrial",
+                "withoutTrialId":"yearly.59.99",
+                "title": "รายปี",
+                "subtitle":"ต่อสัปดาห์",
+                "subtitleNoTrial":"",
+                "isBestOffer" : true,
+                "priceDevider":null
+            }
+    ]
+    }
+}
+
