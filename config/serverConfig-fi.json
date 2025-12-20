@@ -1,4 +1,5 @@
 {
+    "showOnboarding":true,
     "subscription":{
         "showTransparencyDialog": true,
         "title":"Tilaa avataksesi kaikki ominaisuudet",

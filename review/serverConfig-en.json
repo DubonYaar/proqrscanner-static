@@ -1,5 +1,6 @@
 
 {
+    "showOnboarding":true,
     "subscription":{
         "showTransparencyDialog": true,
         "title":"Tap subscribe to unlock all features",

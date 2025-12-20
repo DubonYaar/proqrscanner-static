@@ -1,4 +1,5 @@
 {
+    "showOnboarding":true,
     "subscription":{
         "showTransparencyDialog": true,
         "title":"Abonniere, um alle Funktionen freizuschalten",
