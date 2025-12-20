@@ -1,0 +1,37 @@
+{
+    "subscription":{
+        "showTransparencyDialog": true,
+        "title":"Đăng ký để mở khóa tất cả tính năng",
+        "bulletpoints":[
+            "Quét QR không giới hạn",
+            "Tạo mã QR từ nhiều mẫu",
+            "Thêm logo và màu sắc vào mã QR"
+        ],
+        "mainButtonTitle":"Đăng ký",
+        "freeTrialEnabled": true,
+        "showFreeTrialToggle": false,
+        "selectedProgramIndex": 1,
+        "showUpsaleDialog": false,
+        "programs":
+         [
+            {
+                "withTrialId":"weekly.9.99.withTrial",
+                "withoutTrialId":"weekly.9.99",
+                "title": "Hàng tuần",
+                "subtitle":"3 ngày dùng thử miễn phí",
+                "subtitleNoTrial":"",
+                "isBestOffer" : false
+            },
+            {
+                "withTrialId":"yearly.59.99.withTrial",
+                "withoutTrialId":"yearly.59.99",
+                "title": "Hàng năm",
+                "subtitle":"mỗi tuần",
+                "subtitleNoTrial":"",
+                "isBestOffer" : true,
+                "priceDevider":null
+            }
+    ]
+    }
+}
+

@@ -1,0 +1,37 @@
+{
+    "subscription":{
+        "showTransparencyDialog": true,
+        "title":"Abonner for å låse opp alle funksjoner",
+        "bulletpoints":[
+            "Ubegrensede QR-skanninger",
+            "Generer QR-koder fra mange maler",
+            "Legg til logo og farger på QR-koder"
+        ],
+        "mainButtonTitle":"Abonner",
+        "freeTrialEnabled": true,
+        "showFreeTrialToggle": false,
+        "selectedProgramIndex": 1,
+        "showUpsaleDialog": false,
+        "programs":
+         [
+            {
+                "withTrialId":"weekly.9.99.withTrial",
+                "withoutTrialId":"weekly.9.99",
+                "title": "Ukentlig",
+                "subtitle":"3 dagers gratis prøveperiode",
+                "subtitleNoTrial":"",
+                "isBestOffer" : false
+            },
+            {
+                "withTrialId":"yearly.59.99.withTrial",
+                "withoutTrialId":"yearly.59.99",
+                "title": "Årlig",
+                "subtitle":"per uke",
+                "subtitleNoTrial":"",
+                "isBestOffer" : true,
+                "priceDevider":null
+            }
+    ]
+    }
+}
+

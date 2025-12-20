@@ -1,0 +1,37 @@
+{
+    "subscription":{
+        "showTransparencyDialog": true,
+        "title":"Prenumerera för att låsa upp alla funktioner",
+        "bulletpoints":[
+            "Obegränsade QR-skanningar",
+            "Generera QR-koder från många mallar",
+            "Lägg till logotyp och färger till QR-koder"
+        ],
+        "mainButtonTitle":"Prenumerera",
+        "freeTrialEnabled": true,
+        "showFreeTrialToggle": false,
+        "selectedProgramIndex": 1,
+        "showUpsaleDialog": false,
+        "programs":
+         [
+            {
+                "withTrialId":"weekly.9.99.withTrial",
+                "withoutTrialId":"weekly.9.99",
+                "title": "Veckovis",
+                "subtitle":"3 dagars gratis provperiod",
+                "subtitleNoTrial":"",
+                "isBestOffer" : false
+            },
+            {
+                "withTrialId":"yearly.59.99.withTrial",
+                "withoutTrialId":"yearly.59.99",
+                "title": "Årsvis",
+                "subtitle":"per vecka",
+                "subtitleNoTrial":"",
+                "isBestOffer" : true,
+                "priceDevider":null
+            }
+    ]
+    }
+}
+

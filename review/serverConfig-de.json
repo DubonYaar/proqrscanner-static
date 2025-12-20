@@ -1,0 +1,37 @@
+{
+    "subscription":{
+        "showTransparencyDialog": true,
+        "title":"Abonniere, um alle Funktionen freizuschalten",
+        "bulletpoints":[
+            "Unbegrenzte QR-Scans",
+            "QR-Codes aus vielen Vorlagen generieren",
+            "Logo und Farben zu QR-Codes hinzufügen"
+        ],
+        "mainButtonTitle":"Abonnieren",
+        "freeTrialEnabled": true,
+        "showFreeTrialToggle": false,
+        "selectedProgramIndex": 1,
+        "showUpsaleDialog": false,
+        "programs":
+         [
+            {
+                "withTrialId":"weekly.9.99.withTrial",
+                "withoutTrialId":"weekly.9.99",
+                "title": "Wöchentlich",
+                "subtitle":"3 Tage kostenlos testen",
+                "subtitleNoTrial":"",
+                "isBestOffer" : false
+            },
+            {
+                "withTrialId":"yearly.59.99.withTrial",
+                "withoutTrialId":"yearly.59.99",
+                "title": "Jährlich",
+                "subtitle":"pro Woche",
+                "subtitleNoTrial":"",
+                "isBestOffer" : true,
+                "priceDevider":null
+            }
+    ]
+    }
+}
+
