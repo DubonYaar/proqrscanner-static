@@ -1,38 +1,27 @@
 {
-    "showOnboarding":true,
-    "subscription":{
-        "showTransparencyDialog": true,
-        "title":"Abonează-te pentru a debloca toate funcțiile",
-        "bulletpoints":[
-            "Scanări QR nelimitate",
-            "Generează coduri QR din multe șabloane",
-            "Adaugă logo și culori la codurile QR"
-        ],
-        "mainButtonTitle":"Abonare",
-        "freeTrialEnabled": true,
-        "showFreeTrialToggle": false,
-        "selectedProgramIndex": 1,
-        "showUpsaleDialog": false,
-        "programs":
-         [
-            {
-                "withTrialId":"weekly.9.99.withTrial",
-                "withoutTrialId":"weekly.9.99",
-                "title": "Săptămânal",
-                "subtitle":"3 zile perioadă de probă gratuită",
-                "subtitleNoTrial":"",
-                "isBestOffer" : false
-            },
-            {
-                "withTrialId":"yearly.59.99.withTrial",
-                "withoutTrialId":"yearly.59.99",
-                "title": "Anual",
-                "subtitle":"pe săptămână",
-                "subtitleNoTrial":"",
-                "isBestOffer" : true,
-                "priceDevider":null
-            }
+  "showOnboarding": true,
+  "subscription": {
+    "showTransparencyDialog": true,
+    "title": "Abonează-te pentru a debloca toate funcțiile",
+    "bulletpoints": [
+      "Scanări QR nelimitate",
+      "Generează coduri QR din multe șabloane",
+      "Adaugă logo și culori la codurile QR"
+    ],
+    "mainButtonTitle": "Abonare",
+    "freeTrialEnabled": true,
+    "showFreeTrialToggle": false,
+    "selectedProgramIndex": 0,
+    "showUpsaleDialog": false,
+    "programs": [
+      {
+        "withTrialId": "weekly.9.99.withTrial",
+        "withoutTrialId": "weekly.9.99",
+        "title": "Săptămânal",
+        "subtitle": "3 zile perioadă de probă gratuită",
+        "subtitleNoTrial": "",
+        "isBestOffer": false
+      }
     ]
-    }
+  }
 }
-

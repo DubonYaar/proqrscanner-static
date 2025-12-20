@@ -1,40 +1,28 @@
 {
-    "showOnboarding":true,
-    "subscription":{
-        "showTransparencyDialog": true,
-        "title":"सभी सुविधाएं अनलॉक करने के लिए टैप करें",
-        "bulletpoints":[
-            "असीमित QR स्कैन",
-            "कई टेम्पलेट्स से QR कोड बनाएं",
-            "QR कोड में लोगो और रंग जोड़ें"
-        ],
-        "mainButtonTitle":"मुफ्त ट्रायल शुरू करें",
-        "mainButtonTitleNoTrial":"जारी रखें",
-        "freeTrialEnabled": false,
-        "showFreeTrialToggle": true,
-        "selectedProgramIndex": 1,
-        "showUpsaleDialog": true,
-        "programs":
-         [
-            {
-                "withTrialId":"weekly.9.99.withTrial",
-                "withoutTrialId":"weekly.9.99",
-                "title": "साप्ताहिक",
-                "subtitle":"3 दिन मुफ्त ट्रायल",
-                "subtitleNoTrial":"प्रति सप्ताह",
-                "isBestOffer" : false
-               
-            },
-            {
-                "withTrialId":"yearly.59.99.withTrial",
-                "withoutTrialId":"yearly.59.99",
-                "title": "वार्षिक",
-                "subtitle":"प्रति सप्ताह",
-                "isBestOffer" : true,
-                "priceDevider":52.14
-            }
-            
+  "showOnboarding": true,
+  "subscription": {
+    "showTransparencyDialog": true,
+    "title": "सभी सुविधाएं अनलॉक करने के लिए टैप करें",
+    "bulletpoints": [
+      "असीमित QR स्कैन",
+      "कई टेम्पलेट्स से QR कोड बनाएं",
+      "QR कोड में लोगो और रंग जोड़ें"
+    ],
+    "mainButtonTitle": "मुफ्त ट्रायल शुरू करें",
+    "mainButtonTitleNoTrial": "जारी रखें",
+    "freeTrialEnabled": false,
+    "showFreeTrialToggle": true,
+    "selectedProgramIndex": 0,
+    "showUpsaleDialog": true,
+    "programs": [
+      {
+        "withTrialId": "weekly.9.99.withTrial",
+        "withoutTrialId": "weekly.9.99",
+        "title": "साप्ताहिक",
+        "subtitle": "3 दिन मुफ्त ट्रायल",
+        "subtitleNoTrial": "प्रति सप्ताह",
+        "isBestOffer": false
+      }
     ]
-    }
+  }
 }
-
