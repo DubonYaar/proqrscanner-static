@@ -1,28 +1,40 @@
 {
-  "showOnboarding": true,
-  "subscription": {
-    "showTransparencyDialog": true,
-    "title": "Napauta avataksesi kaikki ominaisuudet",
-    "bulletpoints": [
-      "Rajoittamattomat QR-skannaukset",
-      "Luo QR-koodeja monista mallipohjista",
-      "Lisää logo ja värit QR-koodeihin"
-    ],
-    "mainButtonTitle": "Aloita ilmainen kokeilu",
-    "mainButtonTitleNoTrial": "Jatka",
-    "freeTrialEnabled": false,
-    "showFreeTrialToggle": true,
-    "selectedProgramIndex": 0,
-    "showUpsaleDialog": true,
-    "programs": [
-      {
-        "withTrialId": "weekly.9.99.withTrial",
-        "withoutTrialId": "weekly.9.99",
-        "title": "Viikoittain",
-        "subtitle": "3 päivän ilmainen kokeilu",
-        "subtitleNoTrial": "Viikossa",
-        "isBestOffer": false
-      }
+    "showOnboarding":true,
+    "subscription":{
+        "showTransparencyDialog": true,
+        "title":"Napauta avataksesi kaikki ominaisuudet",
+        "bulletpoints":[
+            "Rajoittamattomat QR-skannaukset",
+            "Luo QR-koodeja monista mallipohjista",
+            "Lisää logo ja värit QR-koodeihin"
+        ],
+        "mainButtonTitle":"Aloita ilmainen kokeilu",
+        "mainButtonTitleNoTrial":"Jatka",
+        "freeTrialEnabled": false,
+        "showFreeTrialToggle": true,
+        "selectedProgramIndex": 1,
+        "showUpsaleDialog": true,
+        "programs":
+         [
+            {
+                "withTrialId":"weekly.9.99.withTrial",
+                "withoutTrialId":"weekly.9.99",
+                "title": "Viikoittain",
+                "subtitle":"3 päivän ilmainen kokeilu",
+                "subtitleNoTrial":"Viikossa",
+                "isBestOffer" : false
+               
+            },
+            {
+                "withTrialId":"yearly.59.99.withTrial",
+                "withoutTrialId":"yearly.59.99",
+                "title": "Vuosittain",
+                "subtitle":"viikossa",
+                "isBestOffer" : true,
+                "priceDevider":52.14
+            }
+            
     ]
-  }
+    }
 }
+

@@ -1,28 +1,40 @@
 {
-  "showOnboarding": true,
-  "subscription": {
-    "showTransparencyDialog": true,
-    "title": "Tippe zum Freischalten aller Funktionen",
-    "bulletpoints": [
-      "Unbegrenzte QR-Scans",
-      "QR-Codes aus vielen Vorlagen generieren",
-      "Logo und Farben zu QR-Codes hinzufügen"
-    ],
-    "mainButtonTitle": "Kostenlose Testphase starten",
-    "mainButtonTitleNoTrial": "Weiter",
-    "freeTrialEnabled": false,
-    "showFreeTrialToggle": true,
-    "selectedProgramIndex": 0,
-    "showUpsaleDialog": true,
-    "programs": [
-      {
-        "withTrialId": "weekly.9.99.withTrial",
-        "withoutTrialId": "weekly.9.99",
-        "title": "Wöchentlich",
-        "subtitle": "3 Tage kostenlos testen",
-        "subtitleNoTrial": "Pro Woche",
-        "isBestOffer": false
-      }
+    "showOnboarding":true,
+    "subscription":{
+        "showTransparencyDialog": true,
+        "title":"Tippe zum Freischalten aller Funktionen",
+        "bulletpoints":[
+            "Unbegrenzte QR-Scans",
+            "QR-Codes aus vielen Vorlagen generieren",
+            "Logo und Farben zu QR-Codes hinzufügen"
+        ],
+        "mainButtonTitle":"Kostenlose Testphase starten",
+        "mainButtonTitleNoTrial":"Weiter",
+        "freeTrialEnabled": false,
+        "showFreeTrialToggle": true,
+        "selectedProgramIndex": 1,
+        "showUpsaleDialog": true,
+        "programs":
+         [
+            {
+                "withTrialId":"weekly.9.99.withTrial",
+                "withoutTrialId":"weekly.9.99",
+                "title": "Wöchentlich",
+                "subtitle":"3 Tage kostenlos testen",
+                "subtitleNoTrial":"Pro Woche",
+                "isBestOffer" : false
+               
+            },
+            {
+                "withTrialId":"yearly.59.99.withTrial",
+                "withoutTrialId":"yearly.59.99",
+                "title": "Jährlich",
+                "subtitle":"pro Woche",
+                "isBestOffer" : true,
+                "priceDevider":52.14
+            }
+            
     ]
-  }
+    }
 }
+

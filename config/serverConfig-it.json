@@ -1,38 +1,27 @@
 {
-    "showOnboarding":true,
-    "subscription":{
-        "showTransparencyDialog": true,
-        "title":"Iscriviti per sbloccare tutte le funzionalità",
-        "bulletpoints":[
-            "Scansioni QR illimitate",
-            "Genera codici QR da molti modelli",
-            "Aggiungi logo e colori ai codici QR"
-        ],
-        "mainButtonTitle":"Iscriviti",
-        "freeTrialEnabled": true,
-        "showFreeTrialToggle": false,
-        "selectedProgramIndex": 1,
-        "showUpsaleDialog": false,
-        "programs":
-         [
-            {
-                "withTrialId":"weekly.9.99.withTrial",
-                "withoutTrialId":"weekly.9.99",
-                "title": "Settimanale",
-                "subtitle":"3 giorni di prova gratuita",
-                "subtitleNoTrial":"",
-                "isBestOffer" : false
-            },
-            {
-                "withTrialId":"yearly.59.99.withTrial",
-                "withoutTrialId":"yearly.59.99",
-                "title": "Annuale",
-                "subtitle":"a settimana",
-                "subtitleNoTrial":"",
-                "isBestOffer" : true,
-                "priceDevider":null
-            }
+  "showOnboarding": true,
+  "subscription": {
+    "showTransparencyDialog": true,
+    "title": "Iscriviti per sbloccare tutte le funzionalità",
+    "bulletpoints": [
+      "Scansioni QR illimitate",
+      "Genera codici QR da molti modelli",
+      "Aggiungi logo e colori ai codici QR"
+    ],
+    "mainButtonTitle": "Iscriviti",
+    "freeTrialEnabled": true,
+    "showFreeTrialToggle": false,
+    "selectedProgramIndex": 0,
+    "showUpsaleDialog": false,
+    "programs": [
+      {
+        "withTrialId": "weekly.9.99.withTrial",
+        "withoutTrialId": "weekly.9.99",
+        "title": "Settimanale",
+        "subtitle": "3 giorni di prova gratuita",
+        "subtitleNoTrial": "",
+        "isBestOffer": false
+      }
     ]
-    }
+  }
 }
-

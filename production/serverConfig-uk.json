@@ -1,28 +1,40 @@
 {
-  "showOnboarding": true,
-  "subscription": {
-    "showTransparencyDialog": true,
-    "title": "Торкніться, щоб розблокувати всі функції",
-    "bulletpoints": [
-      "Безлімітне сканування QR",
-      "Створюйте QR-коди з багатьох шаблонів",
-      "Додавайте логотип та кольори до QR-кодів"
-    ],
-    "mainButtonTitle": "Почати безкоштовний період",
-    "mainButtonTitleNoTrial": "Продовжити",
-    "freeTrialEnabled": false,
-    "showFreeTrialToggle": true,
-    "selectedProgramIndex": 0,
-    "showUpsaleDialog": true,
-    "programs": [
-      {
-        "withTrialId": "weekly.9.99.withTrial",
-        "withoutTrialId": "weekly.9.99",
-        "title": "Щотижня",
-        "subtitle": "3 дні безкоштовно",
-        "subtitleNoTrial": "На тиждень",
-        "isBestOffer": false
-      }
+    "showOnboarding":true,
+    "subscription":{
+        "showTransparencyDialog": true,
+        "title":"Торкніться, щоб розблокувати всі функції",
+        "bulletpoints":[
+            "Безлімітне сканування QR",
+            "Створюйте QR-коди з багатьох шаблонів",
+            "Додавайте логотип та кольори до QR-кодів"
+        ],
+        "mainButtonTitle":"Почати безкоштовний період",
+        "mainButtonTitleNoTrial":"Продовжити",
+        "freeTrialEnabled": false,
+        "showFreeTrialToggle": true,
+        "selectedProgramIndex": 1,
+        "showUpsaleDialog": true,
+        "programs":
+         [
+            {
+                "withTrialId":"weekly.9.99.withTrial",
+                "withoutTrialId":"weekly.9.99",
+                "title": "Щотижня",
+                "subtitle":"3 дні безкоштовно",
+                "subtitleNoTrial":"На тиждень",
+                "isBestOffer" : false
+               
+            },
+            {
+                "withTrialId":"yearly.59.99.withTrial",
+                "withoutTrialId":"yearly.59.99",
+                "title": "Щорічно",
+                "subtitle":"на тиждень",
+                "isBestOffer" : true,
+                "priceDevider":52.14
+            }
+            
     ]
-  }
+    }
 }
+

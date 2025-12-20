@@ -1,28 +1,40 @@
 {
-  "showOnboarding": true,
-  "subscription": {
-    "showTransparencyDialog": true,
-    "title": "Toque para desbloquear todas as funcionalidades",
-    "bulletpoints": [
-      "Digitalizações QR ilimitadas",
-      "Gere códigos QR de vários modelos",
-      "Adicione logótipo e cores aos códigos QR"
-    ],
-    "mainButtonTitle": "Iniciar teste gratuito",
-    "mainButtonTitleNoTrial": "Continuar",
-    "freeTrialEnabled": false,
-    "showFreeTrialToggle": true,
-    "selectedProgramIndex": 0,
-    "showUpsaleDialog": true,
-    "programs": [
-      {
-        "withTrialId": "weekly.9.99.withTrial",
-        "withoutTrialId": "weekly.9.99",
-        "title": "Semanal",
-        "subtitle": "3 dias de teste grátis",
-        "subtitleNoTrial": "Por semana",
-        "isBestOffer": false
-      }
+    "showOnboarding":true,
+    "subscription":{
+        "showTransparencyDialog": true,
+        "title":"Toque para desbloquear todas as funcionalidades",
+        "bulletpoints":[
+            "Digitalizações QR ilimitadas",
+            "Gere códigos QR de vários modelos",
+            "Adicione logótipo e cores aos códigos QR"
+        ],
+        "mainButtonTitle":"Iniciar teste gratuito",
+        "mainButtonTitleNoTrial":"Continuar",
+        "freeTrialEnabled": false,
+        "showFreeTrialToggle": true,
+        "selectedProgramIndex": 1,
+        "showUpsaleDialog": true,
+        "programs":
+         [
+            {
+                "withTrialId":"weekly.9.99.withTrial",
+                "withoutTrialId":"weekly.9.99",
+                "title": "Semanal",
+                "subtitle":"3 dias de teste grátis",
+                "subtitleNoTrial":"Por semana",
+                "isBestOffer" : false
+               
+            },
+            {
+                "withTrialId":"yearly.59.99.withTrial",
+                "withoutTrialId":"yearly.59.99",
+                "title": "Anual",
+                "subtitle":"por semana",
+                "isBestOffer" : true,
+                "priceDevider":52.14
+            }
+            
     ]
-  }
+    }
 }
+

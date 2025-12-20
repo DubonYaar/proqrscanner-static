@@ -1,38 +1,27 @@
 {
-    "showOnboarding":true,
-    "subscription":{
-        "showTransparencyDialog": true,
-        "title":"Berlangganan untuk membuka semua fitur",
-        "bulletpoints":[
-            "Pindai QR tanpa batas",
-            "Buat kode QR dari banyak template",
-            "Tambahkan logo dan warna ke kode QR"
-        ],
-        "mainButtonTitle":"Berlangganan",
-        "freeTrialEnabled": true,
-        "showFreeTrialToggle": false,
-        "selectedProgramIndex": 1,
-        "showUpsaleDialog": false,
-        "programs":
-         [
-            {
-                "withTrialId":"weekly.9.99.withTrial",
-                "withoutTrialId":"weekly.9.99",
-                "title": "Mingguan",
-                "subtitle":"3 hari uji coba gratis",
-                "subtitleNoTrial":"",
-                "isBestOffer" : false
-            },
-            {
-                "withTrialId":"yearly.59.99.withTrial",
-                "withoutTrialId":"yearly.59.99",
-                "title": "Tahunan",
-                "subtitle":"per minggu",
-                "subtitleNoTrial":"",
-                "isBestOffer" : true,
-                "priceDevider":null
-            }
+  "showOnboarding": true,
+  "subscription": {
+    "showTransparencyDialog": true,
+    "title": "Berlangganan untuk membuka semua fitur",
+    "bulletpoints": [
+      "Pindai QR tanpa batas",
+      "Buat kode QR dari banyak template",
+      "Tambahkan logo dan warna ke kode QR"
+    ],
+    "mainButtonTitle": "Berlangganan",
+    "freeTrialEnabled": true,
+    "showFreeTrialToggle": false,
+    "selectedProgramIndex": 0,
+    "showUpsaleDialog": false,
+    "programs": [
+      {
+        "withTrialId": "weekly.9.99.withTrial",
+        "withoutTrialId": "weekly.9.99",
+        "title": "Mingguan",
+        "subtitle": "3 hari uji coba gratis",
+        "subtitleNoTrial": "",
+        "isBestOffer": false
+      }
     ]
-    }
+  }
 }
-

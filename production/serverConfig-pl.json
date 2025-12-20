@@ -1,28 +1,40 @@
 {
-  "showOnboarding": true,
-  "subscription": {
-    "showTransparencyDialog": true,
-    "title": "Dotknij, aby odblokować wszystkie funkcje",
-    "bulletpoints": [
-      "Nieograniczone skanowanie QR",
-      "Generuj kody QR z wielu szablonów",
-      "Dodaj logo i kolory do kodów QR"
-    ],
-    "mainButtonTitle": "Rozpocznij bezpłatny okres próbny",
-    "mainButtonTitleNoTrial": "Kontynuuj",
-    "freeTrialEnabled": false,
-    "showFreeTrialToggle": true,
-    "selectedProgramIndex": 0,
-    "showUpsaleDialog": true,
-    "programs": [
-      {
-        "withTrialId": "weekly.9.99.withTrial",
-        "withoutTrialId": "weekly.9.99",
-        "title": "Tygodniowo",
-        "subtitle": "3 dni bezpłatnego okresu próbnego",
-        "subtitleNoTrial": "Za tydzień",
-        "isBestOffer": false
-      }
+    "showOnboarding":true,
+    "subscription":{
+        "showTransparencyDialog": true,
+        "title":"Dotknij, aby odblokować wszystkie funkcje",
+        "bulletpoints":[
+            "Nieograniczone skanowanie QR",
+            "Generuj kody QR z wielu szablonów",
+            "Dodaj logo i kolory do kodów QR"
+        ],
+        "mainButtonTitle":"Rozpocznij bezpłatny okres próbny",
+        "mainButtonTitleNoTrial":"Kontynuuj",
+        "freeTrialEnabled": false,
+        "showFreeTrialToggle": true,
+        "selectedProgramIndex": 1,
+        "showUpsaleDialog": true,
+        "programs":
+         [
+            {
+                "withTrialId":"weekly.9.99.withTrial",
+                "withoutTrialId":"weekly.9.99",
+                "title": "Tygodniowo",
+                "subtitle":"3 dni bezpłatnego okresu próbnego",
+                "subtitleNoTrial":"Za tydzień",
+                "isBestOffer" : false
+               
+            },
+            {
+                "withTrialId":"yearly.59.99.withTrial",
+                "withoutTrialId":"yearly.59.99",
+                "title": "Rocznie",
+                "subtitle":"za tydzień",
+                "isBestOffer" : true,
+                "priceDevider":52.14
+            }
+            
     ]
-  }
+    }
 }
+

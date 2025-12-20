@@ -1,28 +1,40 @@
 {
-  "showOnboarding": true,
-  "subscription": {
-    "showTransparencyDialog": true,
-    "title": "タップしてすべての機能をアンロック",
-    "bulletpoints": [
-      "無制限QRスキャン",
-      "多くのテンプレートからQRコードを生成",
-      "QRコードにロゴと色を追加"
-    ],
-    "mainButtonTitle": "無料トライアルを開始",
-    "mainButtonTitleNoTrial": "続ける",
-    "freeTrialEnabled": false,
-    "showFreeTrialToggle": true,
-    "selectedProgramIndex": 0,
-    "showUpsaleDialog": true,
-    "programs": [
-      {
-        "withTrialId": "weekly.9.99.withTrial",
-        "withoutTrialId": "weekly.9.99",
-        "title": "週間",
-        "subtitle": "3日間無料トライアル",
-        "subtitleNoTrial": "週あたり",
-        "isBestOffer": false
-      }
+    "showOnboarding":true,
+    "subscription":{
+        "showTransparencyDialog": true,
+        "title":"タップしてすべての機能をアンロック",
+        "bulletpoints":[
+            "無制限QRスキャン",
+            "多くのテンプレートからQRコードを生成",
+            "QRコードにロゴと色を追加"
+        ],
+        "mainButtonTitle":"無料トライアルを開始",
+        "mainButtonTitleNoTrial":"続ける",
+        "freeTrialEnabled": false,
+        "showFreeTrialToggle": true,
+        "selectedProgramIndex": 1,
+        "showUpsaleDialog": true,
+        "programs":
+         [
+            {
+                "withTrialId":"weekly.9.99.withTrial",
+                "withoutTrialId":"weekly.9.99",
+                "title": "週間",
+                "subtitle":"3日間無料トライアル",
+                "subtitleNoTrial":"週あたり",
+                "isBestOffer" : false
+               
+            },
+            {
+                "withTrialId":"yearly.59.99.withTrial",
+                "withoutTrialId":"yearly.59.99",
+                "title": "年間",
+                "subtitle":"週あたり",
+                "isBestOffer" : true,
+                "priceDevider":52.14
+            }
+            
     ]
-  }
+    }
 }
+

@@ -1,28 +1,40 @@
 {
-  "showOnboarding": true,
-  "subscription": {
-    "showTransparencyDialog": true,
-    "title": "Πατήστε για να ξεκλειδώσετε όλες τις λειτουργίες",
-    "bulletpoints": [
-      "Απεριόριστες σαρώσεις QR",
-      "Δημιουργήστε κωδικούς QR από πολλά πρότυπα",
-      "Προσθέστε λογότυπο και χρώματα στους κωδικούς QR"
-    ],
-    "mainButtonTitle": "Έναρξη δωρεάν δοκιμής",
-    "mainButtonTitleNoTrial": "Συνέχεια",
-    "freeTrialEnabled": false,
-    "showFreeTrialToggle": true,
-    "selectedProgramIndex": 0,
-    "showUpsaleDialog": true,
-    "programs": [
-      {
-        "withTrialId": "weekly.9.99.withTrial",
-        "withoutTrialId": "weekly.9.99",
-        "title": "Εβδομαδιαία",
-        "subtitle": "3 ημέρες δωρεάν δοκιμή",
-        "subtitleNoTrial": "Ανά εβδομάδα",
-        "isBestOffer": false
-      }
+    "showOnboarding":true,
+    "subscription":{
+        "showTransparencyDialog": true,
+        "title":"Πατήστε για να ξεκλειδώσετε όλες τις λειτουργίες",
+        "bulletpoints":[
+            "Απεριόριστες σαρώσεις QR",
+            "Δημιουργήστε κωδικούς QR από πολλά πρότυπα",
+            "Προσθέστε λογότυπο και χρώματα στους κωδικούς QR"
+        ],
+        "mainButtonTitle":"Έναρξη δωρεάν δοκιμής",
+        "mainButtonTitleNoTrial":"Συνέχεια",
+        "freeTrialEnabled": false,
+        "showFreeTrialToggle": true,
+        "selectedProgramIndex": 1,
+        "showUpsaleDialog": true,
+        "programs":
+         [
+            {
+                "withTrialId":"weekly.9.99.withTrial",
+                "withoutTrialId":"weekly.9.99",
+                "title": "Εβδομαδιαία",
+                "subtitle":"3 ημέρες δωρεάν δοκιμή",
+                "subtitleNoTrial":"Ανά εβδομάδα",
+                "isBestOffer" : false
+               
+            },
+            {
+                "withTrialId":"yearly.59.99.withTrial",
+                "withoutTrialId":"yearly.59.99",
+                "title": "Ετήσια",
+                "subtitle":"ανά εβδομάδα",
+                "isBestOffer" : true,
+                "priceDevider":52.14
+            }
+            
     ]
-  }
+    }
 }
+
