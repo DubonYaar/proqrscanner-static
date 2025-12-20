@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pro QR Scanner – Scan & Create QR Codes</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Pro QR Scanner - The fastest way to scan and create beautiful QR codes. Unlimited scans, custom designs, and professional templates.">
+    <meta name="apple-itunes-app" content="app-id=YOUR_APP_ID">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'DM Sans', system-ui, -apple-system, sans-serif;
+            background: linear-gradient(145deg, #0a0a0f 0%, #1a1a2e 50%, #0f0f1a 100%);
+            color: #ffffff;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* Animated gradient orbs */
+        .bg-orb {
+            position: fixed;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.4;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .orb-1 {
+            width: 400px;
+            height: 400px;
+            background: linear-gradient(135deg, #6366f1, #8b5cf6);
+            top: -100px;
+            right: -100px;
+            animation: float 8s ease-in-out infinite;
+        }
+
+        .orb-2 {
+            width: 300px;
+            height: 300px;
+            background: linear-gradient(135deg, #06b6d4, #3b82f6);
+            bottom: 10%;
+            left: -80px;
+            animation: float 10s ease-in-out infinite reverse;
+        }
+
+        .orb-3 {
+            width: 200px;
+            height: 200px;
+            background: linear-gradient(135deg, #f472b6, #c084fc);
+            top: 50%;
+            right: 10%;
+            animation: float 12s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            50% { transform: translate(30px, -30px) scale(1.1); }
+        }
+
+        .container {
+            position: relative;
+            z-index: 1;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 60px 24px;
+        }
+
+        /* Header */
+        header {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .app-icon {
+            width: 120px;
+            height: 120px;
+            background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #c084fc 100%);
+            border-radius: 28px;
+            margin: 0 auto 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 20px 60px rgba(99, 102, 241, 0.4);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .app-icon::before {
+            content: '';
+            position: absolute;
+            inset: 3px;
+            background: linear-gradient(135deg, #1a1a2e 0%, #2a2a4e 100%);
+            border-radius: 24px;
+        }
+
+        .app-icon svg {
+            position: relative;
+            z-index: 1;
+            width: 60px;
+            height: 60px;
+        }
+
+        h1 {
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-weight: 700;
+            letter-spacing: -0.03em;
+            margin-bottom: 16px;
+            background: linear-gradient(135deg, #ffffff 0%, #a5b4fc 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .tagline {
+            font-size: 1.25rem;
+            color: #94a3b8;
+            max-width: 500px;
+            margin: 0 auto 40px;
+            line-height: 1.6;
+        }
+
+        /* App Store Button */
+        .app-store-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: #ffffff;
+            color: #0a0a0f;
+            padding: 14px 28px;
+            border-radius: 14px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.05rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 40px rgba(255, 255, 255, 0.15);
+        }
+
+        .app-store-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 50px rgba(255, 255, 255, 0.25);
+        }
+
+        .app-store-btn svg {
+            width: 28px;
+            height: 28px;
+        }
+
+        /* Features Section */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+            margin-bottom: 80px;
+        }
+
+        .feature-card {
+            background: linear-gradient(145deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0.02) 100%);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 20px;
+            padding: 32px 28px;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(139, 92, 246, 0.4);
+            box-shadow: 0 20px 50px rgba(139, 92, 246, 0.15);
+        }
+
+        .feature-icon {
+            width: 56px;
+            height: 56px;
+            background: linear-gradient(135deg, #6366f1, #8b5cf6);
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .feature-icon svg {
+            width: 28px;
+            height: 28px;
+            stroke: #ffffff;
+        }
+
+        .feature-card h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: #f1f5f9;
+        }
+
+        .feature-card p {
+            color: #94a3b8;
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+
+        /* Highlights */
+        .highlights {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .highlights h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 40px;
+            color: #f1f5f9;
+        }
+
+        .highlight-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 16px;
+        }
+
+        .highlight-pill {
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(255,255,255,0.1);
+            padding: 12px 24px;
+            border-radius: 100px;
+            font-size: 0.95rem;
+            color: #e2e8f0;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .highlight-pill span {
+            color: #a78bfa;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding-top: 40px;
+            border-top: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 32px;
+            margin-bottom: 24px;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: #94a3b8;
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.2s ease;
+        }
+
+        .footer-links a:hover {
+            color: #a78bfa;
+        }
+
+        .copyright {
+            color: #64748b;
+            font-size: 0.85rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 640px) {
+            .container {
+                padding: 40px 20px;
+            }
+
+            header {
+                margin-bottom: 60px;
+            }
+
+            .app-icon {
+                width: 100px;
+                height: 100px;
+                border-radius: 24px;
+            }
+
+            .app-icon::before {
+                border-radius: 20px;
+            }
+
+            .features {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-links {
+                gap: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-orb orb-1"></div>
+    <div class="bg-orb orb-2"></div>
+    <div class="bg-orb orb-3"></div>
+
+    <div class="container">
+        <header>
+            <div class="app-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="3" y="3" width="7" height="7" rx="1"/>
+                    <rect x="14" y="3" width="7" height="7" rx="1"/>
+                    <rect x="3" y="14" width="7" height="7" rx="1"/>
+                    <rect x="14" y="14" width="3" height="3"/>
+                    <rect x="18" y="14" width="3" height="3"/>
+                    <rect x="14" y="18" width="3" height="3"/>
+                    <rect x="18" y="18" width="3" height="3"/>
+                </svg>
+            </div>
+            <h1>Pro QR Scanner</h1>
+            <p class="tagline">The fastest, most beautiful way to scan and create QR codes. Designed for simplicity. Built for professionals.</p>
+            <a href="https://apps.apple.com/app/idYOUR_APP_ID" class="app-store-btn">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+                </svg>
+                Download on the App Store
+            </a>
+        </header>
+
+        <section class="features">
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="3"/>
+                        <path d="M12 1v2m0 18v2M4.22 4.22l1.42 1.42m12.72 12.72 1.42 1.42M1 12h2m18 0h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+                    </svg>
+                </div>
+                <h3>Lightning-Fast Scanning</h3>
+                <p>Instantly recognize any QR code or barcode. Our advanced scanner works in low light and at any angle.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                    </svg>
+                </div>
+                <h3>Beautiful QR Designs</h3>
+                <p>Create stunning QR codes with custom colors, gradients, and your own logo. Make your brand stand out.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="3" y="3" width="18" height="18" rx="2"/>
+                        <path d="M3 9h18M9 21V9"/>
+                    </svg>
+                </div>
+                <h3>Pro Templates</h3>
+                <p>Choose from dozens of professional templates for URLs, contacts, WiFi, events, and more.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/>
+                        <polyline points="16 6 12 2 8 6"/>
+                        <line x1="12" y1="2" x2="12" y2="15"/>
+                    </svg>
+                </div>
+                <h3>Easy Sharing</h3>
+                <p>Export in high resolution. Share directly to social media, messages, or save to your photo library.</p>
+            </div>
+        </section>
+
+        <section class="highlights">
+            <h2>Everything You Need</h2>
+            <div class="highlight-grid">
+                <div class="highlight-pill"><span>✓</span> Unlimited QR Scans</div>
+                <div class="highlight-pill"><span>✓</span> Custom Logo Support</div>
+                <div class="highlight-pill"><span>✓</span> Scan History</div>
+                <div class="highlight-pill"><span>✓</span> Batch Creation</div>
+                <div class="highlight-pill"><span>✓</span> Dark Mode</div>
+                <div class="highlight-pill"><span>✓</span> No Ads</div>
+                <div class="highlight-pill"><span>✓</span> Privacy Focused</div>
+                <div class="highlight-pill"><span>✓</span> Offline Support</div>
+            </div>
+        </section>
+
+        <footer>
+            <div class="footer-links">
+                <a href="/privacy.html">Privacy Policy</a>
+                <a href="/eula.html">Terms of Use</a>
+                <a href="/support.html">Support</a>
+            </div>
+            <p class="copyright">© 2025 Pro QR Scanner. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>
+
