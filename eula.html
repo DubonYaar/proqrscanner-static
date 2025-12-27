@@ -2,60 +2,435 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Terms of Use - ProQRScanner</title>
+    <title>Terms of Use - Pro QR Scanner</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #EEEAE6;
+            --bg-light: #F7F5F3;
+            --main: #824CB2;
+            --main-dark: #6A3D94;
+            --main-light: #A674D4;
+            --text: #2D2A32;
+            --text-muted: #6B6574;
+            --white: #FFFFFF;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        /* Background Pattern */
+        .bg-pattern {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+            opacity: 0.4;
+        }
+
+        .bg-pattern::before {
+            content: '';
+            position: absolute;
+            top: -30%;
+            right: -20%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, var(--main-light) 0%, transparent 70%);
+            opacity: 0.15;
+        }
+
+        /* Header */
+        header {
+            padding: 24px 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            background: rgba(238, 234, 230, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            box-shadow: 0 2px 20px rgba(130, 76, 178, 0.1);
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            width: 44px;
+            height: 44px;
+            background: linear-gradient(135deg, var(--main) 0%, var(--main-dark) 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 12px rgba(130, 76, 178, 0.3);
+        }
+
+        .logo-icon svg {
+            width: 24px;
+            height: 24px;
+            fill: var(--white);
+        }
+
+        .logo-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text);
+        }
+
+        .logo-text span {
+            color: var(--main);
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-muted);
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: var(--main);
+        }
+
+        /* Main Content */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 140px 24px 60px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .page-header {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+
+        .page-header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: var(--text);
+            margin-bottom: 12px;
+        }
+
+        .page-header h1 span {
+            color: var(--main);
+        }
+
+        .last-updated {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        .content-card {
+            background: var(--white);
+            border-radius: 24px;
+            padding: 48px;
+            box-shadow: 0 10px 40px rgba(130, 76, 178, 0.08);
+        }
+
+        .intro {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            margin-bottom: 32px;
+            line-height: 1.8;
+        }
+
+        h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--text);
+            margin: 32px 0 16px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        h2::before {
+            content: '';
+            width: 4px;
+            height: 24px;
+            background: linear-gradient(180deg, var(--main) 0%, var(--main-light) 100%);
+            border-radius: 2px;
+        }
+
+        .content-card p {
+            color: var(--text-muted);
+            margin-bottom: 16px;
+            line-height: 1.7;
+        }
+
+        .content-card ul {
+            padding-left: 0;
+            list-style: none;
+            margin: 16px 0 24px;
+        }
+
+        .content-card ul li {
+            position: relative;
+            padding-left: 28px;
+            margin-bottom: 10px;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        .content-card ul li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 8px;
+            width: 8px;
+            height: 8px;
+            background: var(--main);
+            border-radius: 50%;
+        }
+
+        .content-card strong {
+            color: var(--text);
+        }
+
+        .contact-box {
+            background: rgba(130, 76, 178, 0.08);
+            border-radius: 16px;
+            padding: 24px;
+            margin-top: 24px;
+        }
+
+        .contact-box a {
+            color: var(--main);
+            font-weight: 600;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-box a:hover {
+            color: var(--main-dark);
+        }
+
+        /* Footer */
+        footer {
+            padding: 40px 0;
+            border-top: 1px solid rgba(130, 76, 178, 0.1);
+            margin-top: 40px;
+        }
+
+        .footer-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 24px;
+        }
+
+        .footer-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--main);
+        }
+
+        .footer-copyright {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* Mobile Menu */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+        }
+
+        .mobile-menu-btn span {
+            display: block;
+            width: 24px;
+            height: 2px;
+            background: var(--text);
+            margin: 6px 0;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav {
+                display: none;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .container {
+                padding: 120px 20px 40px;
+            }
+
+            .page-header h1 {
+                font-size: 2rem;
+            }
+
+            .content-card {
+                padding: 32px 24px;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .footer-links {
+                flex-direction: column;
+                gap: 12px;
+            }
+        }
+    </style>
 </head>
 <body>
-    <h1>Terms of Use (EULA) for ProQRScanner</h1>
-    <p><strong>Last updated:</strong> [DATE]</p>
+    <div class="bg-pattern"></div>
 
-    <p>This End User License Agreement (“Agreement”) is between you and 
-    <strong>[YOUR NAME / COMPANY NAME]</strong> (“we”, “us”, “our”) 
-    and governs your use of the ProQRScanner mobile application (“the App”).</p>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M3 3h6v6H3V3zm12 0h6v6h-6V3zM3 15h6v6H3v-6zm12 3h3v3h-3v-3zm0-3h3v3h-3v-3zm3 3h3v3h-3v-3z"/>
+                    </svg>
+                </div>
+                <span class="logo-text">Pro<span>QR</span></span>
+            </a>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="index.html#features">Features</a>
+                <a href="support.html">Support</a>
+            </nav>
+            <button class="mobile-menu-btn" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
 
-    <p>By downloading or using the App, you agree to these terms.</p>
+    <!-- Main Content -->
+    <div class="container">
+        <div class="page-header">
+            <h1>Terms of <span>Use</span></h1>
+            <p class="last-updated">Last updated: December 2024</p>
+        </div>
 
-    <h2>1. License</h2>
-    <p>We grant you a <strong>non-exclusive, non-transferable, limited license</strong> to use the App for personal, non-commercial purposes in accordance with this Agreement and App Store rules.</p>
+        <div class="content-card">
+            <p class="intro">
+                This End User License Agreement ("Agreement") governs your use of the Pro QR Scanner mobile application ("the App"). By downloading or using the App, you agree to these terms.
+            </p>
 
-    <h2>2. Subscription & Payments</h2>
-    <p>The App may offer an auto-renewable subscription that unlocks premium features such as:</p>
-    <ul>
-        <li>Unlimited QR scans</li>
-        <li>All QR templates</li>
-        <li>Advanced customization tools</li>
-    </ul>
+            <h2>1. License</h2>
+            <p>We grant you a <strong>non-exclusive, non-transferable, limited license</strong> to use the App for personal, non-commercial purposes in accordance with this Agreement and App Store rules.</p>
 
-    <p>Payments and renewals are handled entirely by <strong>Apple</strong>. 
-    You may manage or cancel your subscription in your Apple ID account settings.</p>
+            <h2>2. Subscription & Payments</h2>
+            <p>The App may offer an auto-renewable subscription that unlocks premium features such as:</p>
+            <ul>
+                <li>Unlimited QR scans</li>
+                <li>All QR templates</li>
+                <li>Advanced customization tools</li>
+            </ul>
+            <p>Payments and renewals are handled entirely by <strong>Apple</strong>. You may manage or cancel your subscription in your Apple ID account settings.</p>
 
-    <h2>3. Acceptable Use</h2>
-    <p>You agree not to:</p>
-    <ul>
-        <li>Use the App for illegal or harmful purposes</li>
-        <li>Reverse-engineer, modify, or copy the App</li>
-        <li>Interfere with the App’s security features</li>
-        <li>Create fraudulent, harmful, or malicious QR codes</li>
-    </ul>
+            <h2>3. Acceptable Use</h2>
+            <p>You agree not to:</p>
+            <ul>
+                <li>Use the App for illegal or harmful purposes</li>
+                <li>Reverse-engineer, modify, or copy the App</li>
+                <li>Interfere with the App's security features</li>
+                <li>Create fraudulent, harmful, or malicious QR codes</li>
+            </ul>
 
-    <h2>4. Ownership</h2>
-    <p>All rights to the App, including software, design, and content, belong to 
-    <strong>[YOUR NAME / COMPANY NAME]</strong>.</p>
+            <h2>4. Ownership</h2>
+            <p>All rights to the App, including software, design, and content, belong to Pro QR Scanner.</p>
 
-    <h2>5. Disclaimer</h2>
-    <p>The App is provided <strong>"as is"</strong>, without warranties of any kind. 
-    We do not guarantee uninterrupted or error-free operation.</p>
+            <h2>5. Disclaimer</h2>
+            <p>The App is provided <strong>"as is"</strong>, without warranties of any kind. We do not guarantee uninterrupted or error-free operation.</p>
+            <p>To the fullest extent permitted by law, we are not liable for any damages resulting from the use or inability to use the App.</p>
 
-    <p>To the fullest extent permitted by law, we are not liable for any damages resulting from the use or inability to use the App.</p>
+            <h2>6. Termination</h2>
+            <p>We may suspend or terminate your license if you violate this Agreement. You may stop using the App at any time.</p>
 
-    <h2>6. Termination</h2>
-    <p>We may suspend or terminate your license if you violate this Agreement. 
-    You may stop using the App at any time.</p>
+            <h2>7. Changes to the Agreement</h2>
+            <p>We may update these Terms occasionally. Continued use of the App after any update constitutes acceptance of the revised Agreement.</p>
 
-    <h2>7. Changes to the Agreement</h2>
-    <p>We may update these Terms occasionally. Continued use of the App after any update constitutes acceptance of the revised Agreement.</p>
+            <h2>8. Contact Us</h2>
+            <p>If you have any questions about these Terms, please contact us:</p>
+            <div class="contact-box">
+                <a href="mailto:support@proqrscanner.online">support@proqrscanner.online</a>
+            </div>
+        </div>
+    </div>
 
-    <h2>8. Contact Us</h2>
-    <p>If you have any questions about these Terms, contact us at:<br>
-    <strong>[YOUR SUPPORT EMAIL]</strong></p>
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="eula.html">Terms of Use</a>
+                <a href="support.html">Support</a>
+                <a href="index.html">Home</a>
+            </div>
+            <p class="footer-copyright">© 2025 Pro QR Scanner. All rights reserved.</p>
+        </div>
+    </footer>
 </body>
 </html>
