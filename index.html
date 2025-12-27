@@ -2,10 +2,1256 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
-    <title>QR App – Landing Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pro QR Scanner – Scan, Create & Share QR Codes</title>
+    <meta name="description" content="Pro QR Scanner is the all-in-one QR tool that lets you scan, create, customize, and share QR codes with ease." />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #EEEAE6;
+            --bg-light: #F7F5F3;
+            --main: #824CB2;
+            --main-dark: #6A3D94;
+            --main-light: #A674D4;
+            --text: #2D2A32;
+            --text-muted: #6B6574;
+            --white: #FFFFFF;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Geometric Background Pattern */
+        .bg-pattern {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+            opacity: 0.4;
+        }
+
+        .bg-pattern::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, var(--main-light) 0%, transparent 70%);
+            opacity: 0.15;
+        }
+
+        .bg-pattern::after {
+            content: '';
+            position: absolute;
+            bottom: 10%;
+            left: -10%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, var(--main) 0%, transparent 70%);
+            opacity: 0.1;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Header */
+        header {
+            padding: 24px 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            background: rgba(238, 234, 230, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            transition: box-shadow 0.3s ease;
+        }
+
+        header.scrolled {
+            box-shadow: 0 2px 20px rgba(130, 76, 178, 0.1);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            width: 44px;
+            height: 44px;
+            background: linear-gradient(135deg, var(--main) 0%, var(--main-dark) 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 12px rgba(130, 76, 178, 0.3);
+        }
+
+        .logo-icon svg {
+            width: 24px;
+            height: 24px;
+            fill: var(--white);
+        }
+
+        .logo-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text);
+        }
+
+        .logo-text span {
+            color: var(--main);
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-muted);
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: var(--main);
+        }
+
+        .nav-cta {
+            background: var(--main);
+            color: var(--white) !important;
+            padding: 12px 24px;
+            border-radius: 50px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease !important;
+        }
+
+        .nav-cta:hover {
+            background: var(--main-dark) !important;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(130, 76, 178, 0.35);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 180px 0 100px;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .hero-text {
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--white);
+            padding: 8px 16px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--main);
+            margin-bottom: 24px;
+            box-shadow: 0 2px 12px rgba(130, 76, 178, 0.1);
+        }
+
+        .hero-badge::before {
+            content: '✨';
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.8rem;
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 24px;
+            color: var(--text);
+        }
+
+        h1 span {
+            color: var(--main);
+            position: relative;
+        }
+
+        h1 span::after {
+            content: '';
+            position: absolute;
+            bottom: 4px;
+            left: 0;
+            width: 100%;
+            height: 8px;
+            background: var(--main-light);
+            opacity: 0.3;
+            z-index: -1;
+            border-radius: 4px;
+        }
+
+        .hero-description {
+            font-size: 1.15rem;
+            color: var(--text-muted);
+            margin-bottom: 36px;
+            max-width: 500px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 16px 32px;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--main) 0%, var(--main-dark) 100%);
+            color: var(--white);
+            box-shadow: 0 8px 24px rgba(130, 76, 178, 0.35);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 32px rgba(130, 76, 178, 0.45);
+        }
+
+        .btn-secondary {
+            background: var(--white);
+            color: var(--text);
+            border: 2px solid transparent;
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--main);
+            color: var(--main);
+        }
+
+        .hero-visual {
+            position: relative;
+            animation: fadeInUp 0.8s ease-out 0.2s both;
+        }
+
+        .phone-mockup {
+            position: relative;
+            width: 320px;
+            height: 640px;
+            background: linear-gradient(145deg, #2D2A32 0%, #1a1820 100%);
+            border-radius: 48px;
+            padding: 12px;
+            box-shadow: 
+                0 60px 120px rgba(45, 42, 50, 0.4),
+                0 20px 40px rgba(130, 76, 178, 0.2),
+                inset 0 2px 0 rgba(255, 255, 255, 0.1);
+            margin: 0 auto;
+        }
+
+        .phone-screen {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(180deg, var(--bg-light) 0%, var(--bg) 100%);
+            border-radius: 40px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .phone-notch {
+            position: absolute;
+            top: 12px;
+            width: 120px;
+            height: 28px;
+            background: #2D2A32;
+            border-radius: 20px;
+        }
+
+        .qr-scan-animation {
+            width: 180px;
+            height: 180px;
+            border: 4px solid var(--main);
+            border-radius: 24px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .qr-scan-animation::before {
+            content: '';
+            position: absolute;
+            top: -4px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60%;
+            height: 4px;
+            background: linear-gradient(90deg, transparent, var(--main), transparent);
+            animation: scanLine 2s ease-in-out infinite;
+        }
+
+        @keyframes scanLine {
+            0%, 100% { top: -4px; }
+            50% { top: calc(100% - 4px); }
+        }
+
+        .qr-code-display {
+            width: 120px;
+            height: 120px;
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            grid-template-rows: repeat(7, 1fr);
+            gap: 2px;
+        }
+
+        .qr-cell {
+            background: var(--text);
+            border-radius: 2px;
+        }
+
+        .qr-cell.empty {
+            background: transparent;
+        }
+
+        .floating-element {
+            position: absolute;
+            background: var(--white);
+            border-radius: 16px;
+            padding: 12px 18px;
+            box-shadow: 0 8px 32px rgba(130, 76, 178, 0.15);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            animation: float 4s ease-in-out infinite;
+        }
+
+        .floating-element.el-1 {
+            top: 10%;
+            right: -30px;
+            animation-delay: 0s;
+        }
+
+        .floating-element.el-2 {
+            bottom: 20%;
+            left: -40px;
+            animation-delay: 1s;
+        }
+
+        .floating-element.el-3 {
+            bottom: 35%;
+            right: -50px;
+            animation-delay: 2s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .floating-icon {
+            width: 36px;
+            height: 36px;
+            background: linear-gradient(135deg, var(--main-light) 0%, var(--main) 100%);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .floating-icon svg {
+            width: 18px;
+            height: 18px;
+            fill: var(--white);
+        }
+
+        /* Features Section */
+        .features {
+            padding: 120px 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .section-label {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--main) 0%, var(--main-dark) 100%);
+            color: var(--white);
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: var(--text);
+            margin-bottom: 16px;
+        }
+
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 32px;
+        }
+
+        .feature-card {
+            background: var(--white);
+            border-radius: 24px;
+            padding: 40px;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 24px 48px rgba(130, 76, 178, 0.15);
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--main) 0%, var(--main-light) 100%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .feature-card:hover::before {
+            opacity: 1;
+        }
+
+        .feature-icon {
+            width: 64px;
+            height: 64px;
+            background: linear-gradient(135deg, rgba(130, 76, 178, 0.1) 0%, rgba(130, 76, 178, 0.05) 100%);
+            border-radius: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 24px;
+        }
+
+        .feature-icon svg {
+            width: 32px;
+            height: 32px;
+            stroke: var(--main);
+            fill: none;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        .feature-card h3 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: var(--text);
+        }
+
+        .feature-card p {
+            color: var(--text-muted);
+            font-size: 1rem;
+            line-height: 1.7;
+        }
+
+        /* Customization Feature Highlight */
+        .feature-card.highlight {
+            grid-column: span 2;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .customization-preview {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .custom-qr {
+            width: 100px;
+            height: 100px;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.3s ease;
+        }
+
+        .custom-qr:hover {
+            transform: scale(1.1);
+        }
+
+        .custom-qr.style-1 {
+            background: linear-gradient(135deg, #FF6B6B 0%, #FF8E8E 100%);
+        }
+
+        .custom-qr.style-2 {
+            background: linear-gradient(135deg, var(--main) 0%, var(--main-light) 100%);
+        }
+
+        .custom-qr.style-3 {
+            background: linear-gradient(135deg, #4ECDC4 0%, #7DE8E1 100%);
+        }
+
+        .custom-qr svg {
+            width: 50px;
+            height: 50px;
+            fill: var(--white);
+        }
+
+        /* Pro Section */
+        .pro-section {
+            padding: 120px 0;
+        }
+
+        .pro-card {
+            background: linear-gradient(145deg, var(--main) 0%, var(--main-dark) 100%);
+            border-radius: 32px;
+            padding: 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .pro-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+        }
+
+        .pro-card::after {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            left: -10%;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.05) 0%, transparent 70%);
+        }
+
+        .pro-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .pro-text h2 {
+            color: var(--white);
+            margin-bottom: 24px;
+        }
+
+        .pro-text p {
+            color: rgba(255, 255, 255, 0.85);
+            font-size: 1.15rem;
+            margin-bottom: 32px;
+        }
+
+        .pro-features {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .pro-feature {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            color: var(--white);
+            font-size: 1.05rem;
+            font-weight: 500;
+        }
+
+        .pro-feature-icon {
+            width: 28px;
+            height: 28px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .pro-feature-icon svg {
+            width: 14px;
+            height: 14px;
+            fill: var(--white);
+        }
+
+        .pro-visual {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .pro-badge {
+            width: 220px;
+            height: 220px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .pro-badge::before {
+            content: '';
+            position: absolute;
+            width: 280px;
+            height: 280px;
+            border: 2px dashed rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            animation: spin 20s linear infinite;
+        }
+
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .pro-badge-inner {
+            width: 160px;
+            height: 160px;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            backdrop-filter: blur(8px);
+        }
+
+        .pro-badge-inner svg {
+            width: 48px;
+            height: 48px;
+            fill: var(--white);
+            margin-bottom: 8px;
+        }
+
+        .pro-badge-inner span {
+            color: var(--white);
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+
+        /* Footer */
+        footer {
+            padding: 60px 0;
+            border-top: 1px solid rgba(130, 76, 178, 0.1);
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 24px;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .footer-logo-icon {
+            width: 36px;
+            height: 36px;
+            background: linear-gradient(135deg, var(--main) 0%, var(--main-dark) 100%);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .footer-logo-icon svg {
+            width: 18px;
+            height: 18px;
+            fill: var(--white);
+        }
+
+        .footer-logo span {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--text);
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 32px;
+        }
+
+        .footer-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--main);
+        }
+
+        .footer-copyright {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* Mobile Menu */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+        }
+
+        .mobile-menu-btn span {
+            display: block;
+            width: 24px;
+            height: 2px;
+            background: var(--text);
+            margin: 6px 0;
+            transition: all 0.3s ease;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            h1 {
+                font-size: 3rem;
+            }
+
+            h2 {
+                font-size: 2.4rem;
+            }
+
+            .hero-content {
+                gap: 40px;
+            }
+
+            .pro-card {
+                padding: 60px;
+            }
+        }
+
+        @media (max-width: 900px) {
+            nav {
+                display: none;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-description {
+                margin: 0 auto 36px;
+            }
+
+            .hero-buttons {
+                justify-content: center;
+            }
+
+            .hero-visual {
+                order: -1;
+            }
+
+            .phone-mockup {
+                width: 280px;
+                height: 560px;
+            }
+
+            .floating-element.el-1 {
+                right: 5%;
+            }
+
+            .floating-element.el-2 {
+                left: 5%;
+            }
+
+            .floating-element.el-3 {
+                right: 0;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .feature-card.highlight {
+                grid-column: span 1;
+                grid-template-columns: 1fr;
+            }
+
+            .pro-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .pro-visual {
+                order: -1;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .hero {
+                padding: 140px 0 80px;
+            }
+
+            h1 {
+                font-size: 2.4rem;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .phone-mockup {
+                width: 240px;
+                height: 480px;
+            }
+
+            .floating-element {
+                display: none;
+            }
+
+            .feature-card {
+                padding: 32px;
+            }
+
+            .pro-card {
+                padding: 40px 24px;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .footer-links {
+                flex-direction: column;
+                gap: 16px;
+            }
+        }
+    </style>
 </head>
 <body>
-    <h1>Welcome to My QR App</h1>
-    <p>This is a static page hosted on GitHub Pages.</p>
+    <div class="bg-pattern"></div>
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="#" class="logo">
+                    <div class="logo-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M3 3h6v6H3V3zm12 0h6v6h-6V3zM3 15h6v6H3v-6zm12 3h3v3h-3v-3zm0-3h3v3h-3v-3zm3 3h3v3h-3v-3z"/>
+                        </svg>
+                    </div>
+                    <span class="logo-text">Pro<span>QR</span></span>
+                </a>
+                <nav>
+                    <a href="#features">Features</a>
+                    <a href="#pro">Pro</a>
+                    <a href="support.html">Support</a>
+                    <a href="https://apps.apple.com/us/app/pro-qr-scanner/id6755650601" class="nav-cta">Download App</a>
+                </nav>
+                <button class="mobile-menu-btn" aria-label="Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <span class="hero-badge">All-in-One QR Solution</span>
+                    <h1>Scan, Create & <span>Share</span> QR Codes</h1>
+                    <p class="hero-description">Pro QR Scanner gives you everything you need in one simple, powerful app. Whether you're scanning codes on the go or designing your own—we've got you covered.</p>
+                    <div class="hero-buttons">
+                        <a href="https://apps.apple.com/us/app/pro-qr-scanner/id6755650601" class="btn btn-primary">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+                            </svg>
+                            Download for iOS
+                        </a>
+                        <a href="#features" class="btn btn-secondary">Learn More</a>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="phone-mockup">
+                        <div class="phone-screen">
+                            <div class="phone-notch"></div>
+                            <div class="qr-scan-animation">
+                                <div class="qr-code-display">
+                                    <!-- QR Code Pattern -->
+                                    <div class="qr-cell"></div>
+                                    <div class="qr-cell"></div>
+                                    <div class="qr-cell"></div>
+                                    <div class="qr-cell"></div>
+                                    <div class="qr-cell"></div>
+                                    <div class="qr-cell"></div>
+                                    <div class="qr-cell"></div>
+                                    <div class="qr-cell"></div>
+                                    <div class="qr-cell empty"></div>
+                                    <div class="qr-cell empty"></div>
+                                    <div class="qr-cell empty"></div>
+                                    <div class="qr-cell empty"></div>
+                                    <div class="qr-cell empty"></div>
+                                    <div class="qr-cell"></div>
+                                    <div class="qr-cell"></div>
+                                    <div class="qr-cell empty"></div>
+                                    <div class="qr-cell"></div>
+                                    <div class="qr-cell"></div>
+                                    <div class="qr-cell"></div>
+                                    <div class="qr-cell empty"></div>
+                                    <div class="qr-cell"></div>
+                                    <div class="qr-cell"></div>
+                                    <div class="qr-cell empty"></div>
+                                    <div class="qr-cell"></div>
+                                    <div class="qr-cell empty"></div>
+                                    <div class="qr-cell"></div>
+                                    <div class="qr-cell empty"></div>
+                                    <div class="qr-cell"></div>
+                                    <div class="qr-cell"></div>
+                                    <div class="qr-cell empty"></div>
+                                    <div class="qr-cell"></div>
+                                    <div class="qr-cell empty"></div>
+                                    <div class="qr-cell"></div>
+                                    <div class="qr-cell empty"></div>
+                                    <div class="qr-cell"></div>
+                                    <div class="qr-cell"></div>
+                                    <div class="qr-cell empty"></div>
+                                    <div class="qr-cell empty"></div>
+                                    <div class="qr-cell empty"></div>
+                                    <div class="qr-cell empty"></div>
+                                    <div class="qr-cell empty"></div>
+                                    <div class="qr-cell"></div>
+                                    <div class="qr-cell"></div>
+                                    <div class="qr-cell"></div>
+                                    <div class="qr-cell"></div>
+                                    <div class="qr-cell"></div>
+                                    <div class="qr-cell"></div>
+                                    <div class="qr-cell"></div>
+                                    <div class="qr-cell"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Floating Elements -->
+                    <div class="floating-element el-1">
+                        <div class="floating-icon">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"/>
+                            </svg>
+                        </div>
+                        <span>Scanned!</span>
+                    </div>
+                    <div class="floating-element el-2">
+                        <div class="floating-icon">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/>
+                            </svg>
+                        </div>
+                        <span>Create QR</span>
+                    </div>
+                    <div class="floating-element el-3">
+                        <div class="floating-icon">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92s2.92-1.31 2.92-2.92-1.31-2.92-2.92-2.92z"/>
+                            </svg>
+                        </div>
+                        <span>Share</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Features</span>
+                <h2>Everything You Need</h2>
+                <p class="section-subtitle">From lightning-fast scanning to fully customizable designs, Pro QR Scanner has you covered.</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                        </svg>
+                    </div>
+                    <h3>Lightning-Fast Scanner</h3>
+                    <p>Scan QR codes instantly. No delays, no extra steps—just point and scan. Our optimized scanner works even in low light conditions.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm5 11h-4v4h-2v-4H7v-2h4V7h2v4h4v2z"/>
+                        </svg>
+                    </div>
+                    <h3>Create Your Own QR Codes</h3>
+                    <p>Generate QR codes for links, text, Wi-Fi, contacts, and more. Choose from a curated library of templates, including popular social media layouts.</p>
+                </div>
+                <div class="feature-card highlight">
+                    <div class="feature-text">
+                        <div class="feature-icon">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M12 22C6.49 22 2 17.51 2 12S6.49 2 12 2s10 4.04 10 9c0 3.31-2.69 6-6 6h-1.77c-.28 0-.5.22-.5.5 0 .12.05.23.13.33.41.47.64 1.06.64 1.67A2.5 2.5 0 0 1 12 22zm0-18c-4.41 0-8 3.59-8 8s3.59 8 8 8c.28 0 .5-.22.5-.5a.54.54 0 0 0-.14-.35c-.41-.46-.63-1.05-.63-1.65a2.5 2.5 0 0 1 2.5-2.5H16c2.21 0 4-1.79 4-4 0-3.86-3.59-7-8-7z"/>
+                                <circle cx="6.5" cy="11.5" r="1.5"/>
+                                <circle cx="9.5" cy="7.5" r="1.5"/>
+                                <circle cx="14.5" cy="7.5" r="1.5"/>
+                                <circle cx="17.5" cy="11.5" r="1.5"/>
+                            </svg>
+                        </div>
+                        <h3>Fully Customizable Designs</h3>
+                        <p>Make your QR stand out with custom colors, shapes and design styles, and even your own logo. Create unique codes that match your brand or personality.</p>
+                    </div>
+                    <div class="customization-preview">
+                        <div class="custom-qr style-1">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M3 3h6v6H3V3zm2 2v2h2V5H5zm8-2h6v6h-6V3zm2 2v2h2V5h-2zM3 13h6v6H3v-6zm2 2v2h2v-2H5zm13-2h3v2h-3v-2zm-5 0h2v2h-2v-2zm2 2h3v3h-3v-3zm0 3h2v2h-2v-2zm3 0h2v2h-2v-2z"/>
+                            </svg>
+                        </div>
+                        <div class="custom-qr style-2">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M3 3h6v6H3V3zm2 2v2h2V5H5zm8-2h6v6h-6V3zm2 2v2h2V5h-2zM3 13h6v6H3v-6zm2 2v2h2v-2H5zm13-2h3v2h-3v-2zm-5 0h2v2h-2v-2zm2 2h3v3h-3v-3zm0 3h2v2h-2v-2zm3 0h2v2h-2v-2z"/>
+                            </svg>
+                        </div>
+                        <div class="custom-qr style-3">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M3 3h6v6H3V3zm2 2v2h2V5H5zm8-2h6v6h-6V3zm2 2v2h2V5h-2zM3 13h6v6H3v-6zm2 2v2h2v-2H5zm13-2h3v2h-3v-2zm-5 0h2v2h-2v-2zm2 2h3v3h-3v-3zm0 3h2v2h-2v-2zm3 0h2v2h-2v-2z"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92s2.92-1.31 2.92-2.92-1.31-2.92-2.92-2.92z"/>
+                        </svg>
+                    </div>
+                    <h3>Share Anywhere</h3>
+                    <p>Export and share your QR codes with friends, clients, or across your social platforms. Multiple format options available for any use case.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pro Section -->
+    <section class="pro-section" id="pro">
+        <div class="container">
+            <div class="pro-card">
+                <div class="pro-content">
+                    <div class="pro-text">
+                        <h2>Unlock More with Pro</h2>
+                        <p>Upgrade to the Pro plan and unlock the full potential of Pro QR Scanner with unlimited features and advanced tools.</p>
+                        <div class="pro-features">
+                            <div class="pro-feature">
+                                <div class="pro-feature-icon">
+                                    <svg viewBox="0 0 24 24">
+                                        <path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"/>
+                                    </svg>
+                                </div>
+                                <span>Unlimited QR scans</span>
+                            </div>
+                            <div class="pro-feature">
+                                <div class="pro-feature-icon">
+                                    <svg viewBox="0 0 24 24">
+                                        <path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"/>
+                                    </svg>
+                                </div>
+                                <span>Full access to all premium templates</span>
+                            </div>
+                            <div class="pro-feature">
+                                <div class="pro-feature-icon">
+                                    <svg viewBox="0 0 24 24">
+                                        <path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"/>
+                                    </svg>
+                                </div>
+                                <span>Advanced customization tools</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pro-visual">
+                        <div class="pro-badge">
+                            <div class="pro-badge-inner">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
+                                </svg>
+                                <span>PRO</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <div class="footer-logo-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M3 3h6v6H3V3zm12 0h6v6h-6V3zM3 15h6v6H3v-6zm12 3h3v3h-3v-3zm0-3h3v3h-3v-3zm3 3h3v3h-3v-3z"/>
+                        </svg>
+                    </div>
+                    <span>Pro QR Scanner</span>
+                </div>
+                <div class="footer-links">
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="eula.html">Terms of Use</a>
+                    <a href="support.html">Support</a>
+                </div>
+                <p class="footer-copyright">© 2025 Pro QR Scanner. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Header scroll effect
+        const header = document.querySelector('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
 </body>
 </html>
