@@ -89,18 +89,9 @@
         .logo-icon {
             width: 44px;
             height: 44px;
-            background: linear-gradient(135deg, var(--main) 0%, var(--main-dark) 100%);
             border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
             box-shadow: 0 4px 12px rgba(130, 76, 178, 0.3);
-        }
-
-        .logo-icon svg {
-            width: 24px;
-            height: 24px;
-            fill: var(--white);
+            object-fit: cover;
         }
 
         .logo-text {
@@ -346,11 +337,7 @@
     <header>
         <div class="header-container">
             <a href="index.html" class="logo">
-                <div class="logo-icon">
-                    <svg viewBox="0 0 24 24">
-                        <path d="M3 3h6v6H3V3zm12 0h6v6h-6V3zM3 15h6v6H3v-6zm12 3h3v3h-3v-3zm0-3h3v3h-3v-3zm3 3h3v3h-3v-3z"/>
-                    </svg>
-                </div>
+                <img src="AppIcon.png" alt="Pro QR Scanner" class="logo-icon">
                 <span class="logo-text">Pro<span>QR</span></span>
             </a>
             <nav>
