@@ -16,7 +16,6 @@
     "programs": [
       {
         "withTrialId": "new.weekly.9.99.withTrial",
-        "withoutTrialId": "weekly.9.99",
         "title": "Hàng tuần",
         "subtitle": "3 ngày dùng thử miễn phí",
         "subtitleNoTrial": "",

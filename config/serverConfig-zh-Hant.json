@@ -16,7 +16,6 @@
     "programs": [
       {
         "withTrialId": "new.weekly.9.99.withTrial",
-        "withoutTrialId": "weekly.9.99",
         "title": "每週",
         "subtitle": "3天免費試用",
         "subtitleNoTrial": "",

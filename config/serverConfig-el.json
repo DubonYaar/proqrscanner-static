@@ -16,7 +16,6 @@
     "programs": [
       {
         "withTrialId": "new.weekly.9.99.withTrial",
-        "withoutTrialId": "weekly.9.99",
         "title": "Εβδομαδιαία",
         "subtitle": "3 ημέρες δωρεάν δοκιμή",
         "subtitleNoTrial": "",
