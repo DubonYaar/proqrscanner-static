@@ -16,7 +16,7 @@
         "programs":
          [
             {
-                "withTrialId":"weekly.9.99.withTrial",
+                "withTrialId":"new.weekly.9.99.withTrial",
                 "withoutTrialId":"weekly.9.99",
                 "title": "שבועי",
                 "subtitle":"3 ימי ניסיון חינם",

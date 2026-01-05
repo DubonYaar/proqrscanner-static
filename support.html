@@ -23,6 +23,11 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        html {
+            -webkit-text-size-adjust: 100%;
         }
 
         body {
@@ -31,6 +36,8 @@
             color: var(--text);
             line-height: 1.6;
             min-height: 100vh;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
 
         /* Background Pattern */
@@ -295,16 +302,71 @@
             background: none;
             border: none;
             cursor: pointer;
-            padding: 8px;
+            padding: 12px;
+            min-width: 44px;
+            min-height: 44px;
+            align-items: center;
+            justify-content: center;
         }
 
         .mobile-menu-btn span {
             display: block;
-            width: 24px;
+            width: 22px;
             height: 2px;
             background: var(--text);
-            margin: 6px 0;
+            margin: 5px 0;
             transition: all 0.3s ease;
+            border-radius: 2px;
+        }
+
+        .mobile-menu-btn.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .mobile-menu-btn.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .mobile-menu-btn.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+
+        .mobile-nav {
+            display: none;
+            position: fixed;
+            top: 76px;
+            left: 0;
+            right: 0;
+            background: rgba(238, 234, 230, 0.98);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            padding: 20px 24px;
+            box-shadow: 0 8px 32px rgba(130, 76, 178, 0.1);
+            z-index: 99;
+            flex-direction: column;
+        }
+
+        .mobile-nav.active {
+            display: flex;
+        }
+
+        .mobile-nav a {
+            display: block;
+            padding: 16px 0;
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 500;
+            font-size: 1.1rem;
+            border-bottom: 1px solid rgba(130, 76, 178, 0.1);
+            transition: color 0.3s ease;
+        }
+
+        .mobile-nav a:last-child {
+            border-bottom: none;
+        }
+
+        .mobile-nav a.active {
+            color: var(--main);
         }
 
         /* Responsive */
@@ -339,6 +401,96 @@
                 gap: 12px;
             }
         }
+
+        @media (max-width: 480px) {
+            header {
+                padding: 16px 0;
+            }
+
+            .header-container {
+                padding: 0 16px;
+            }
+
+            .logo-icon {
+                width: 36px;
+                height: 36px;
+                border-radius: 10px;
+            }
+
+            .logo-text {
+                font-size: 1.25rem;
+            }
+
+            .container {
+                padding: 100px 16px 32px;
+            }
+
+            .page-header {
+                margin-bottom: 32px;
+            }
+
+            .page-header h1 {
+                font-size: 1.75rem;
+            }
+
+            .tagline {
+                font-size: 1rem;
+            }
+
+            .card {
+                padding: 24px 20px;
+                border-radius: 20px;
+                margin-bottom: 16px;
+            }
+
+            .card h2 {
+                font-size: 1.25rem;
+                margin-bottom: 12px;
+            }
+
+            .card h2::before {
+                height: 20px;
+            }
+
+            .card p {
+                font-size: 0.95rem;
+            }
+
+            .email-link {
+                padding: 10px 20px;
+                font-size: 0.9rem;
+            }
+
+            ul li {
+                font-size: 0.95rem;
+                padding-left: 24px;
+                margin-bottom: 10px;
+            }
+
+            ul li::before {
+                width: 6px;
+                height: 6px;
+                top: 7px;
+            }
+
+            footer {
+                padding: 28px 0;
+                margin-top: 24px;
+            }
+
+            .footer-content {
+                padding: 0 16px;
+                gap: 16px;
+            }
+
+        .footer-links a {
+                font-size: 0.9rem;
+            }
+
+            .footer-copyright {
+                font-size: 0.8rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -357,13 +509,37 @@
                 <a href="index.html#pro">Pro</a>
                 <a href="support.html" class="active">Support</a>
             </nav>
-            <button class="mobile-menu-btn" aria-label="Menu">
+            <button class="mobile-menu-btn" aria-label="Menu" onclick="toggleMobileMenu()">
                 <span></span>
                 <span></span>
                 <span></span>
             </button>
         </div>
+        <nav class="mobile-nav" id="mobileNav">
+            <a href="index.html">Home</a>
+            <a href="index.html#features">Features</a>
+            <a href="index.html#pro">Pro</a>
+            <a href="support.html" class="active">Support</a>
+        </nav>
     </header>
+
+    <script>
+        function toggleMobileMenu() {
+            const btn = document.querySelector('.mobile-menu-btn');
+            const nav = document.getElementById('mobileNav');
+            btn.classList.toggle('active');
+            nav.classList.toggle('active');
+        }
+
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 768) {
+                const btn = document.querySelector('.mobile-menu-btn');
+                const nav = document.getElementById('mobileNav');
+                btn.classList.remove('active');
+                nav.classList.remove('active');
+            }
+        });
+    </script>
 
     <!-- Main Content -->
     <div class="container">
@@ -409,12 +585,12 @@
                 If your question isn't covered here, just send us an email and we'll do our best to respond as soon as we can.
             </p>
         </div>
-    </div>
+        </div>
 
     <!-- Footer -->
     <footer>
         <div class="footer-content">
-            <div class="footer-links">
+        <div class="footer-links">
                 <a href="privacy.html">Privacy Policy</a>
                 <a href="eula.html">Terms of Use</a>
                 <a href="index.html">Home</a>

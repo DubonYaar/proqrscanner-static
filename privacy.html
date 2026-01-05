@@ -23,6 +23,11 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        html {
+            -webkit-text-size-adjust: 100%;
         }
 
         body {
@@ -31,6 +36,8 @@
             color: var(--text);
             line-height: 1.6;
             min-height: 100vh;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
 
         /* Background Pattern */
@@ -285,15 +292,67 @@
             background: none;
             border: none;
             cursor: pointer;
-            padding: 8px;
+            padding: 12px;
+            min-width: 44px;
+            min-height: 44px;
+            align-items: center;
+            justify-content: center;
         }
 
         .mobile-menu-btn span {
             display: block;
-            width: 24px;
+            width: 22px;
             height: 2px;
             background: var(--text);
-            margin: 6px 0;
+            margin: 5px 0;
+            transition: all 0.3s ease;
+            border-radius: 2px;
+        }
+
+        .mobile-menu-btn.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .mobile-menu-btn.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .mobile-menu-btn.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+
+        .mobile-nav {
+            display: none;
+            position: fixed;
+            top: 76px;
+            left: 0;
+            right: 0;
+            background: rgba(238, 234, 230, 0.98);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            padding: 20px 24px;
+            box-shadow: 0 8px 32px rgba(130, 76, 178, 0.1);
+            z-index: 99;
+            flex-direction: column;
+        }
+
+        .mobile-nav.active {
+            display: flex;
+        }
+
+        .mobile-nav a {
+            display: block;
+            padding: 16px 0;
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 500;
+            font-size: 1.1rem;
+            border-bottom: 1px solid rgba(130, 76, 178, 0.1);
+            transition: color 0.3s ease;
+        }
+
+        .mobile-nav a:last-child {
+            border-bottom: none;
         }
 
         /* Responsive */
@@ -328,6 +387,103 @@
                 gap: 12px;
             }
         }
+
+        @media (max-width: 480px) {
+            header {
+                padding: 16px 0;
+            }
+
+            .header-container {
+                padding: 0 16px;
+            }
+
+            .logo-icon {
+                width: 36px;
+                height: 36px;
+                border-radius: 10px;
+            }
+
+            .logo-text {
+                font-size: 1.25rem;
+            }
+
+            .container {
+                padding: 100px 16px 32px;
+            }
+
+            .page-header {
+                margin-bottom: 32px;
+            }
+
+            .page-header h1 {
+                font-size: 1.75rem;
+            }
+
+            .last-updated {
+                font-size: 0.85rem;
+            }
+
+            .content-card {
+                padding: 24px 20px;
+                border-radius: 20px;
+            }
+
+            .intro {
+                font-size: 1rem;
+                margin-bottom: 24px;
+            }
+
+            h2 {
+                font-size: 1.2rem;
+                margin: 24px 0 12px;
+            }
+
+            h2::before {
+                height: 20px;
+            }
+
+            .content-card p {
+                font-size: 0.95rem;
+            }
+
+            .content-card ul li {
+                font-size: 0.95rem;
+                padding-left: 24px;
+            }
+
+            .content-card ul li::before {
+                width: 6px;
+                height: 6px;
+                top: 7px;
+            }
+
+            .contact-box {
+                padding: 20px;
+                border-radius: 12px;
+            }
+
+            .contact-box a {
+                font-size: 0.95rem;
+            }
+
+            footer {
+                padding: 28px 0;
+                margin-top: 24px;
+            }
+
+            .footer-content {
+                padding: 0 16px;
+                gap: 16px;
+            }
+
+            .footer-links a {
+                font-size: 0.9rem;
+            }
+
+            .footer-copyright {
+                font-size: 0.8rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -345,13 +501,36 @@
                 <a href="index.html#features">Features</a>
                 <a href="support.html">Support</a>
             </nav>
-            <button class="mobile-menu-btn" aria-label="Menu">
+            <button class="mobile-menu-btn" aria-label="Menu" onclick="toggleMobileMenu()">
                 <span></span>
                 <span></span>
                 <span></span>
             </button>
         </div>
+        <nav class="mobile-nav" id="mobileNav">
+            <a href="index.html">Home</a>
+            <a href="index.html#features">Features</a>
+            <a href="support.html">Support</a>
+        </nav>
     </header>
+
+    <script>
+        function toggleMobileMenu() {
+            const btn = document.querySelector('.mobile-menu-btn');
+            const nav = document.getElementById('mobileNav');
+            btn.classList.toggle('active');
+            nav.classList.toggle('active');
+        }
+
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 768) {
+                const btn = document.querySelector('.mobile-menu-btn');
+                const nav = document.getElementById('mobileNav');
+                btn.classList.remove('active');
+                nav.classList.remove('active');
+            }
+        });
+    </script>
 
     <!-- Main Content -->
     <div class="container">
@@ -365,56 +544,56 @@
                 Pro QR Scanner ("the App") is committed to protecting your privacy. This Privacy Policy explains how we handle your information when you use the App.
             </p>
 
-            <h2>1. Information We Do NOT Collect</h2>
-            <p>We do <strong>not</strong> collect or store any of the following:</p>
-            <ul>
-                <li>Personal information (name, email, phone number, address)</li>
-                <li>Your generated QR codes</li>
-                <li>Your scanned QR codes or scan history</li>
-                <li>Photos, contacts, or files</li>
-                <li>Location data</li>
-                <li>Payment information (handled securely by Apple)</li>
-            </ul>
-            <p>The App does not use analytics or tracking technologies.</p>
+    <h2>1. Information We Do NOT Collect</h2>
+    <p>We do <strong>not</strong> collect or store any of the following:</p>
+    <ul>
+        <li>Personal information (name, email, phone number, address)</li>
+        <li>Your generated QR codes</li>
+        <li>Your scanned QR codes or scan history</li>
+        <li>Photos, contacts, or files</li>
+        <li>Location data</li>
+        <li>Payment information (handled securely by Apple)</li>
+    </ul>
+    <p>The App does not use analytics or tracking technologies.</p>
 
-            <h2>2. Information We May Collect</h2>
+    <h2>2. Information We May Collect</h2>
             <p>We only collect <strong>non-personal, anonymous</strong> information necessary for the App's functionality, such as:</p>
-            <ul>
-                <li>Basic device information (model, OS version)</li>
-                <li>App usage events (e.g., app open, subscription activation)</li>
-                <li>Crash reports</li>
-            </ul>
-            <p>This information is anonymous and cannot identify you.</p>
+    <ul>
+        <li>Basic device information (model, OS version)</li>
+        <li>App usage events (e.g., app open, subscription activation)</li>
+        <li>Crash reports</li>
+    </ul>
+    <p>This information is anonymous and cannot identify you.</p>
 
-            <h2>3. How Your Data Is Used</h2>
-            <p>We use anonymous information only to:</p>
-            <ul>
-                <li>Ensure the App works correctly</li>
-                <li>Diagnose crashes or bugs</li>
-                <li>Improve features and performance</li>
-            </ul>
-            <p>We do <strong>not</strong> sell, share, or use your data for advertising.</p>
+    <h2>3. How Your Data Is Used</h2>
+    <p>We use anonymous information only to:</p>
+    <ul>
+        <li>Ensure the App works correctly</li>
+        <li>Diagnose crashes or bugs</li>
+        <li>Improve features and performance</li>
+    </ul>
+    <p>We do <strong>not</strong> sell, share, or use your data for advertising.</p>
 
-            <h2>4. Subscription Payments</h2>
+    <h2>4. Subscription Payments</h2>
             <p>All subscriptions and payments are handled entirely by <strong>Apple's App Store</strong>. We do not receive or store your payment details.</p>
 
-            <h2>5. Third-Party Services</h2>
-            <p>The App may use Apple services such as:</p>
-            <ul>
-                <li>App Store (payments)</li>
-                <li>iCloud (optional, if enabled by the user)</li>
-            </ul>
+    <h2>5. Third-Party Services</h2>
+    <p>The App may use Apple services such as:</p>
+    <ul>
+        <li>App Store (payments)</li>
+        <li>iCloud (optional, if enabled by the user)</li>
+    </ul>
 
-            <h2>6. Data Security</h2>
+    <h2>6. Data Security</h2>
             <p>We take reasonable measures to ensure the App's internal processes remain secure. Since we do not store personal data, there is no risk of personal data exposure.</p>
 
             <h2>7. Children's Privacy</h2>
-            <p>The App does not target children and does not collect any personal information from minors.</p>
+    <p>The App does not target children and does not collect any personal information from minors.</p>
 
-            <h2>8. Changes to This Policy</h2>
-            <p>We may update this Privacy Policy occasionally. The updated version will always be available within the App and on our website.</p>
+    <h2>8. Changes to This Policy</h2>
+    <p>We may update this Privacy Policy occasionally. The updated version will always be available within the App and on our website.</p>
 
-            <h2>9. Contact Us</h2>
+    <h2>9. Contact Us</h2>
             <p>If you have any questions about this Privacy Policy, please contact us:</p>
             <div class="contact-box">
                 <a href="mailto:support@proqrscanner.online">support@proqrscanner.online</a>

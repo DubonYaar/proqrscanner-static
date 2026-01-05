@@ -17,7 +17,7 @@
         "programs":
          [
             {
-                "withTrialId":"weekly.9.99.withTrial",
+                "withTrialId":"new.weekly.9.99.withTrial",
                 "withoutTrialId":"weekly.9.99",
                 "title": "Еженедельно",
                 "subtitle":"3 дня бесплатно",

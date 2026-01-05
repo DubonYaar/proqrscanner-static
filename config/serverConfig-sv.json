@@ -15,7 +15,7 @@
     "showUpsaleDialog": false,
     "programs": [
       {
-        "withTrialId": "weekly.9.99.withTrial",
+        "withTrialId": "new.weekly.9.99.withTrial",
         "withoutTrialId": "weekly.9.99",
         "title": "Veckovis",
         "subtitle": "3 dagars gratis provperiod",
