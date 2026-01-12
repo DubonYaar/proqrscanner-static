@@ -15,7 +15,7 @@
     "showUpsaleDialog": false,
     "programs": [
       {
-        "withTrialId": "weekly.noTrial",
+        "withTrialId": "weekly.9.99.noTrial",
         "title": "",
         "subtitle": "Best Price",
         "subtitleNoTrial": "",
