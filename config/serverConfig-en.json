@@ -15,7 +15,7 @@
     "showUpsaleDialog": false,
     "programs": [
       {
-        "withTrialId": "new.weekly.9.99.withTrial",
+        "withTrialId": "yearly.withTrial",
         "title": "Weekly",
         "subtitle": "3 days free trial",
         "subtitleNoTrial": "",
