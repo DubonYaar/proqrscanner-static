@@ -16,8 +16,8 @@
     "programs": [
       {
         "withTrialId": "weekly.9.99.noTrial",
-        "title": "",
-        "subtitle": "Best Price",
+        "title": "Weekly",
+        "subtitle": "",
         "subtitleNoTrial": "",
         "isBestOffer": false
       }
