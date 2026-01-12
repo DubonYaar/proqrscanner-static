@@ -17,6 +17,7 @@
       {
         "withTrialId": "yearly.noTrial",
         "title": "Weekly",
+        "subtitle": "Best Price",
         "subtitleNoTrial": "",
         "isBestOffer": false
       }
