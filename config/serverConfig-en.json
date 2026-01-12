@@ -17,7 +17,6 @@
       {
         "withTrialId": "yearly.noTrial",
         "title": "Weekly",
-        "subtitle": "3 days free trial",
         "subtitleNoTrial": "",
         "isBestOffer": false
       }
