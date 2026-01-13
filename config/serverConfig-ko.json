@@ -1,26 +1,40 @@
 {
-  "showOnboarding": true,
-  "subscription": {
-    "showTransparencyDialog": true,
-    "title": "구독하여 모든 기능 잠금 해제",
-    "bulletpoints": [
-      "무제한 QR 스캔",
-      "다양한 템플릿으로 QR 코드 생성",
-      "QR 코드에 로고와 색상 추가"
-    ],
-    "mainButtonTitle": "구독하기",
-    "freeTrialEnabled": true,
-    "showFreeTrialToggle": false,
-    "selectedProgramIndex": 0,
-    "showUpsaleDialog": false,
-    "programs": [
-      {
-        "withTrialId": "new.weekly.9.99.withTrial",
-        "title": "주간",
-        "subtitle": "3일 무료 체험",
-        "subtitleNoTrial": "",
-        "isBestOffer": false
-      }
+    "showOnboarding":true,
+    "subscription":{
+        "showTransparencyDialog": true,
+        "title":"탭하여 모든 기능 잠금 해제",
+        "bulletpoints":[
+            "무제한 QR 스캔",
+            "다양한 템플릿으로 QR 코드 생성",
+            "QR 코드에 로고와 색상 추가"
+        ],
+        "mainButtonTitle":"무료 체험 시작",
+        "mainButtonTitleNoTrial":"계속",
+        "freeTrialEnabled": false,
+        "showFreeTrialToggle": true,
+        "selectedProgramIndex": 1,
+        "showUpsaleDialog": true,
+        "programs":
+         [
+            {
+                "withTrialId":"new.weekly.9.99.withTrial",
+                "withoutTrialId":"weekly.9.99.noTrial",
+                "title": "주간",
+                "subtitle":"3일 무료 체험",
+                "subtitleNoTrial":"주당",
+                "isBestOffer" : false
+               
+            },
+            {
+                "withTrialId":"yearly.59.99.withTrial",
+                "withoutTrialId":"yearly.59.99",
+                "title": "연간",
+                "subtitle":"주당",
+                "isBestOffer" : true,
+                "priceDevider":52.14
+            }
+            
     ]
-  }
+    }
 }
+

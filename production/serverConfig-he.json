@@ -17,7 +17,7 @@
          [
             {
                 "withTrialId":"new.weekly.9.99.withTrial",
-                "withoutTrialId":"weekly.9.99",
+                "withoutTrialId":"weekly.9.99.noTrial",
                 "title": "שבועי",
                 "subtitle":"3 ימי ניסיון חינם",
                 "isBestOffer" : false

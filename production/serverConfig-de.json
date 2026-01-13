@@ -18,7 +18,7 @@
          [
             {
                 "withTrialId":"new.weekly.9.99.withTrial",
-                "withoutTrialId":"weekly.9.99",
+                "withoutTrialId":"weekly.9.99.noTrial",
                 "title": "Wöchentlich",
                 "subtitle":"3 Tage kostenlos testen",
                 "subtitleNoTrial":"Pro Woche",

@@ -18,7 +18,7 @@
          [
             {
                 "withTrialId":"new.weekly.9.99.withTrial",
-                "withoutTrialId":"weekly.9.99",
+                "withoutTrialId":"weekly.9.99.noTrial",
                 "title": "주간",
                 "subtitle":"3일 무료 체험",
                 "subtitleNoTrial":"주당",

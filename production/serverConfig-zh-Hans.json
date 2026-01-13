@@ -18,7 +18,7 @@
          [
             {
                 "withTrialId":"new.weekly.9.99.withTrial",
-                "withoutTrialId":"weekly.9.99",
+                "withoutTrialId":"weekly.9.99.noTrial",
                 "title": "每周",
                 "subtitle":"3天免费试用",
                 "subtitleNoTrial":"每周",

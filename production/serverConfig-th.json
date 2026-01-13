@@ -18,7 +18,7 @@
          [
             {
                 "withTrialId":"new.weekly.9.99.withTrial",
-                "withoutTrialId":"weekly.9.99",
+                "withoutTrialId":"weekly.9.99.noTrial",
                 "title": "รายสัปดาห์",
                 "subtitle":"ทดลองใช้ฟรี 3 วัน",
                 "subtitleNoTrial":"ต่อสัปดาห์",

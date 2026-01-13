@@ -1,26 +1,40 @@
 {
-  "showOnboarding": true,
-  "subscription": {
-    "showTransparencyDialog": true,
-    "title": "اشترك لفتح جميع الميزات",
-    "bulletpoints": [
-      "مسح غير محدود لرموز QR",
-      "إنشاء رموز QR من قوالب متعددة",
-      "إضافة شعار وألوان لرموز QR"
-    ],
-    "mainButtonTitle": "اشتراك",
-    "freeTrialEnabled": true,
-    "showFreeTrialToggle": false,
-    "selectedProgramIndex": 0,
-    "showUpsaleDialog": false,
-    "programs": [
-      {
-        "withTrialId": "new.weekly.9.99.withTrial",
-        "title": "أسبوعي",
-        "subtitle": "3 أيام تجربة مجانية",
-        "subtitleNoTrial": "",
-        "isBestOffer": false
-      }
+    "showOnboarding":true,
+    "subscription":{
+        "showTransparencyDialog": true,
+        "title":"اضغط للاشتراك لفتح جميع الميزات",
+        "bulletpoints":[
+            "مسح غير محدود لرموز QR",
+            "إنشاء رموز QR من قوالب متعددة",
+            "إضافة شعار وألوان لرموز QR"
+        ],
+        "mainButtonTitle":"بدء التجربة المجانية",
+        "mainButtonTitleNoTrial":"متابعة",
+        "freeTrialEnabled": false,
+        "showFreeTrialToggle": true,
+        "selectedProgramIndex": 1,
+        "showUpsaleDialog": true,
+        "programs":
+         [
+            {
+                "withTrialId":"new.weekly.9.99.withTrial",
+                "withoutTrialId":"weekly.9.99.noTrial",
+                "title": "أسبوعي",
+                "subtitle":"3 أيام تجربة مجانية",
+                "subtitleNoTrial":"في الأسبوع",
+                "isBestOffer" : false
+               
+            },
+            {
+                "withTrialId":"yearly.59.99.withTrial",
+                "withoutTrialId":"yearly.59.99",
+                "title": "سنوي",
+                "subtitle":"في الأسبوع",
+                "isBestOffer" : true,
+                "priceDevider":52.14
+            }
+            
     ]
-  }
+    }
 }
+
