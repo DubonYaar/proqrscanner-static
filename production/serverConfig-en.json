@@ -22,12 +22,12 @@
                 "title": "Weekly",
                 "subtitle":"3 days free trial",
                 "subtitleNoTrial":"Per Week",
-                "isBestOffer" : false,
+                "isBestOffer" : false
                
             },
             {
-                "withTrialId":"yearly.59.99.withTrial",
-                "withoutTrialId":"yearly.59.99",
+                "withTrialId":"yearly.withTrial",
+                "withoutTrialId":"yearly.noTrial",
                 "title": "Yearly",
                 "subtitle":"per week",
                 "isBestOffer" : true,

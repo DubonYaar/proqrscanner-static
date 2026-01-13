@@ -26,8 +26,8 @@
                
             },
             {
-                "withTrialId":"yearly.59.99.withTrial",
-                "withoutTrialId":"yearly.59.99",
+                "withTrialId":"yearly.withTrial",
+                "withoutTrialId":"yearly.noTrial",
                 "title": "سنوي",
                 "subtitle":"في الأسبوع",
                 "isBestOffer" : true,
