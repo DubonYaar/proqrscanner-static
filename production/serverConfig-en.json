@@ -18,7 +18,7 @@
          [
             {
                 "withTrialId":"new.weekly.9.99.withTrial",
-                "withoutTrialId":"weekly.9.99",
+                "withoutTrialId":"weekly.9.99.noTrial",
                 "title": "Weekly",
                 "subtitle":"3 days free trial",
                 "subtitleNoTrial":"Per Week",
