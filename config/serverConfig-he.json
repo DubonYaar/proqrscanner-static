@@ -1,39 +1,27 @@
 {
-    "showOnboarding":true,
-    "subscription":{
-        "showTransparencyDialog": true,
-        "title":"לחץ להרשמה כדי לפתוח את כל התכונות",
-        "bulletpoints":[
-            "סריקות QR ללא הגבלה",
-            "צור קודי QR מתבניות רבות",
-            "הוסף לוגו וצבעים לקודי QR"
-        ],
-        "mainButtonTitle":"הרשמה",
-        "freeTrialEnabled": false,
-        "showFreeTrialToggle": true,
-        "selectedProgramIndex": 1,
-        "showUpsaleDialog": true,
-        "programs":
-         [
-            {
-                "withTrialId":"new.weekly.9.99.withTrial",
-                "withoutTrialId":"weekly.9.99.noTrial",
-                "title": "שבועי",
-                "subtitle":"3 ימי ניסיון חינם",
-                "isBestOffer" : false
-               
-            },
-            {
-                "withTrialId":"yearly.withTrial",
-                "withoutTrialId":"yearly.noTrial",
-                "title": "שנתי",
-                "subtitle":"לשבוע",
-                "isBestOffer" : true,
-                "priceDevider":52.14
-            }
-            
+  "showOnboarding": true,
+  "subscription": {
+    "showTransparencyDialog": true,
+    "title": "הירשם כדי לפתוח את כל התכונות",
+    "bulletpoints": [
+      "סריקות QR ללא הגבלה",
+      "צור קודי QR מתבניות רבות",
+      "הוסף לוגו וצבעים לקודי QR"
+    ],
+    "mainButtonTitle": "הרשמה",
+    "freeTrialEnabled": true,
+    "showFreeTrialToggle": false,
+    "selectedProgramIndex": 0,
+    "showUpsaleDialog": false,
+    "programs": [
+      {
+        "withTrialId": "new.weekly.9.99.withTrial",
+        "withoutTrialId": "weekly.9.99",
+        "title": "שבועי",
+        "subtitle": "3 ימי ניסיון חינם",
+        "subtitleNoTrial": "",
+        "isBestOffer": false
+      }
     ]
-    }
+  }
 }
-
-

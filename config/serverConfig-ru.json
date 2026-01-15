@@ -1,40 +1,27 @@
 {
-    "showOnboarding":true,
-    "subscription":{
-        "showTransparencyDialog": true,
-        "title":"Нажмите, чтобы разблокировать все функции",
-        "bulletpoints":[
-            "Безлимитное сканирование QR",
-            "Создавайте QR-коды из множества шаблонов",
-            "Добавляйте логотип и цвета к QR-кодам"
-        ],
-        "mainButtonTitle":"Начать бесплатный период",
-        "mainButtonTitleNoTrial":"Продолжить",
-        "freeTrialEnabled": false,
-        "showFreeTrialToggle": true,
-        "selectedProgramIndex": 1,
-        "showUpsaleDialog": true,
-        "programs":
-         [
-            {
-                "withTrialId":"new.weekly.9.99.withTrial",
-                "withoutTrialId":"weekly.9.99.noTrial",
-                "title": "Еженедельно",
-                "subtitle":"3 дня бесплатно",
-                "subtitleNoTrial":"В неделю",
-                "isBestOffer" : false
-               
-            },
-            {
-                "withTrialId":"yearly.withTrial",
-                "withoutTrialId":"yearly.noTrial",
-                "title": "Ежегодно",
-                "subtitle":"в неделю",
-                "isBestOffer" : true,
-                "priceDevider":52.14
-            }
-            
+  "showOnboarding": true,
+  "subscription": {
+    "showTransparencyDialog": true,
+    "title": "Подпишитесь, чтобы разблокировать все функции",
+    "bulletpoints": [
+      "Безлимитное сканирование QR",
+      "Создавайте QR-коды из множества шаблонов",
+      "Добавляйте логотип и цвета к QR-кодам"
+    ],
+    "mainButtonTitle": "Подписаться",
+    "freeTrialEnabled": true,
+    "showFreeTrialToggle": false,
+    "selectedProgramIndex": 0,
+    "showUpsaleDialog": false,
+    "programs": [
+      {
+        "withTrialId": "new.weekly.9.99.withTrial",
+        "withoutTrialId": "weekly.9.99",
+        "title": "Еженедельно",
+        "subtitle": "3 дня бесплатно",
+        "subtitleNoTrial": "",
+        "isBestOffer": false
+      }
     ]
-    }
+  }
 }
-
