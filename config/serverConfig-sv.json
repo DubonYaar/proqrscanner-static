@@ -1,27 +1,40 @@
 {
-  "showOnboarding": true,
-  "subscription": {
-    "showTransparencyDialog": true,
-    "title": "Prenumerera för att låsa upp alla funktioner",
-    "bulletpoints": [
-      "Obegränsade QR-skanningar",
-      "Generera QR-koder från många mallar",
-      "Lägg till logotyp och färger till QR-koder"
-    ],
-    "mainButtonTitle": "Prenumerera",
-    "freeTrialEnabled": true,
-    "showFreeTrialToggle": false,
-    "selectedProgramIndex": 0,
-    "showUpsaleDialog": false,
-    "programs": [
-      {
-        "withTrialId": "new.weekly.9.99.withTrial",
-        "withoutTrialId": "weekly.9.99",
-        "title": "Veckovis",
-        "subtitle": "3 dagars gratis provperiod",
-        "subtitleNoTrial": "",
-        "isBestOffer": false
-      }
+    "showOnboarding":true,
+    "subscription":{
+        "showTransparencyDialog": true,
+        "title":"Tryck för att låsa upp alla funktioner",
+        "bulletpoints":[
+            "Obegränsade QR-skanningar",
+            "Generera QR-koder från många mallar",
+            "Lägg till logotyp och färger till QR-koder"
+        ],
+        "mainButtonTitle":"Starta kostnadsfri provperiod",
+        "mainButtonTitleNoTrial":"Fortsätt",
+        "freeTrialEnabled": false,
+        "showFreeTrialToggle": true,
+        "selectedProgramIndex": 1,
+        "showUpsaleDialog": true,
+        "programs":
+         [
+            {
+                "withTrialId":"new.weekly.9.99.withTrial",
+                "withoutTrialId":"weekly.9.99.noTrial",
+                "title": "Veckovis",
+                "subtitle":"3 dagars gratis provperiod",
+                "subtitleNoTrial":"Per vecka",
+                "isBestOffer" : false
+               
+            },
+            {
+                "withTrialId":"yearly.withTrial",
+                "withoutTrialId":"yearly.noTrial",
+                "title": "Årsvis",
+                "subtitle":"per vecka",
+                "isBestOffer" : true,
+                "priceDevider":52.14
+            }
+            
     ]
-  }
+    }
 }
+

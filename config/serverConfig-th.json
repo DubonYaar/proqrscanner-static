@@ -1,27 +1,40 @@
 {
-  "showOnboarding": true,
-  "subscription": {
-    "showTransparencyDialog": true,
-    "title": "สมัครสมาชิกเพื่อปลดล็อกฟีเจอร์ทั้งหมด",
-    "bulletpoints": [
-      "สแกน QR ไม่จำกัด",
-      "สร้างรหัส QR จากเทมเพลตหลากหลาย",
-      "เพิ่มโลโก้และสีให้รหัส QR"
-    ],
-    "mainButtonTitle": "สมัครสมาชิก",
-    "freeTrialEnabled": true,
-    "showFreeTrialToggle": false,
-    "selectedProgramIndex": 0,
-    "showUpsaleDialog": false,
-    "programs": [
-      {
-        "withTrialId": "new.weekly.9.99.withTrial",
-        "withoutTrialId": "weekly.9.99",
-        "title": "รายสัปดาห์",
-        "subtitle": "ทดลองใช้ฟรี 3 วัน",
-        "subtitleNoTrial": "",
-        "isBestOffer": false
-      }
+    "showOnboarding":true,
+    "subscription":{
+        "showTransparencyDialog": true,
+        "title":"แตะเพื่อปลดล็อกฟีเจอร์ทั้งหมด",
+        "bulletpoints":[
+            "สแกน QR ไม่จำกัด",
+            "สร้างรหัส QR จากเทมเพลตหลากหลาย",
+            "เพิ่มโลโก้และสีให้รหัส QR"
+        ],
+        "mainButtonTitle":"เริ่มทดลองใช้ฟรี",
+        "mainButtonTitleNoTrial":"ดำเนินการต่อ",
+        "freeTrialEnabled": false,
+        "showFreeTrialToggle": true,
+        "selectedProgramIndex": 1,
+        "showUpsaleDialog": true,
+        "programs":
+         [
+            {
+                "withTrialId":"new.weekly.9.99.withTrial",
+                "withoutTrialId":"weekly.9.99.noTrial",
+                "title": "รายสัปดาห์",
+                "subtitle":"ทดลองใช้ฟรี 3 วัน",
+                "subtitleNoTrial":"ต่อสัปดาห์",
+                "isBestOffer" : false
+               
+            },
+            {
+                "withTrialId":"yearly.withTrial",
+                "withoutTrialId":"yearly.noTrial",
+                "title": "รายปี",
+                "subtitle":"ต่อสัปดาห์",
+                "isBestOffer" : true,
+                "priceDevider":52.14
+            }
+            
     ]
-  }
+    }
 }
+

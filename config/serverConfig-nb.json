@@ -1,27 +1,40 @@
 {
-  "showOnboarding": true,
-  "subscription": {
-    "showTransparencyDialog": true,
-    "title": "Abonner for å låse opp alle funksjoner",
-    "bulletpoints": [
-      "Ubegrensede QR-skanninger",
-      "Generer QR-koder fra mange maler",
-      "Legg til logo og farger på QR-koder"
-    ],
-    "mainButtonTitle": "Abonner",
-    "freeTrialEnabled": true,
-    "showFreeTrialToggle": false,
-    "selectedProgramIndex": 0,
-    "showUpsaleDialog": false,
-    "programs": [
-      {
-        "withTrialId": "new.weekly.9.99.withTrial",
-        "withoutTrialId": "weekly.9.99",
-        "title": "Ukentlig",
-        "subtitle": "3 dagers gratis prøveperiode",
-        "subtitleNoTrial": "",
-        "isBestOffer": false
-      }
+    "showOnboarding":true,
+    "subscription":{
+        "showTransparencyDialog": true,
+        "title":"Trykk for å låse opp alle funksjoner",
+        "bulletpoints":[
+            "Ubegrensede QR-skanninger",
+            "Generer QR-koder fra mange maler",
+            "Legg til logo og farger på QR-koder"
+        ],
+        "mainButtonTitle":"Start gratis prøveperiode",
+        "mainButtonTitleNoTrial":"Fortsett",
+        "freeTrialEnabled": false,
+        "showFreeTrialToggle": true,
+        "selectedProgramIndex": 1,
+        "showUpsaleDialog": true,
+        "programs":
+         [
+            {
+                "withTrialId":"new.weekly.9.99.withTrial",
+                "withoutTrialId":"weekly.9.99.noTrial",
+                "title": "Ukentlig",
+                "subtitle":"3 dagers gratis prøveperiode",
+                "subtitleNoTrial":"Per uke",
+                "isBestOffer" : false
+               
+            },
+            {
+                "withTrialId":"yearly.withTrial",
+                "withoutTrialId":"yearly.noTrial",
+                "title": "Årlig",
+                "subtitle":"per uke",
+                "isBestOffer" : true,
+                "priceDevider":52.14
+            }
+            
     ]
-  }
+    }
 }
+
