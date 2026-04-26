@@ -1,40 +1,27 @@
 {
-    "showOnboarding":true,
-    "subscription":{
-        "showTransparencyDialog": true,
-        "title":"Tik om alle functies te ontgrendelen",
-        "bulletpoints":[
-            "Onbeperkt QR-scans",
-            "Genereer QR-codes uit vele sjablonen",
-            "Voeg logo en kleuren toe aan QR-codes"
-        ],
-        "mainButtonTitle":"Start gratis proefperiode",
-        "mainButtonTitleNoTrial":"Doorgaan",
-        "freeTrialEnabled": false,
-        "showFreeTrialToggle": true,
-        "selectedProgramIndex": 1,
-        "showUpsaleDialog": true,
-        "programs":
-         [
-            {
-                "withTrialId":"new.weekly.9.99.withTrial",
-                "withoutTrialId":"weekly.9.99.noTrial",
-                "title": "Wekelijks",
-                "subtitle":"3 dagen gratis proberen",
-                "subtitleNoTrial":"Per week",
-                "isBestOffer" : false
-               
-            },
-            {
-                "withTrialId":"yearly.withTrial",
-                "withoutTrialId":"yearly.noTrial",
-                "title": "Jaarlijks",
-                "subtitle":"per week",
-                "isBestOffer" : true,
-                "priceDevider":52.14
-            }
-            
+  "showOnboarding": true,
+  "subscription": {
+    "showTransparencyDialog": true,
+    "title": "Abonneer om alle functies te ontgrendelen",
+    "bulletpoints": [
+      "Onbeperkt QR-scans",
+      "Genereer QR-codes uit vele sjablonen",
+      "Voeg logo en kleuren toe aan QR-codes"
+    ],
+    "mainButtonTitle": "Abonneren",
+    "freeTrialEnabled": true,
+    "showFreeTrialToggle": false,
+    "selectedProgramIndex": 0,
+    "showUpsaleDialog": false,
+    "programs": [
+      {
+        "withTrialId": "new.weekly.9.99.withTrial",
+        "withoutTrialId": "weekly.9.99",
+        "title": "Wekelijks",
+        "subtitle": "3 dagen gratis proberen",
+        "subtitleNoTrial": "",
+        "isBestOffer": false
+      }
     ]
-    }
+  }
 }
-
